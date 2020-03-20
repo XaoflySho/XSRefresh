@@ -32,3 +32,6 @@ public struct XSRefreshHeaderConst {
     static let dateTodayText     = "XSRefreshHeaderDateTodayText"
     static let noneLastDateText  = "XSRefreshHeaderNoneLastDateText"
 }
+
+public let XSRefreshLabelFont = UIFont.boldSystemFont(ofSize: 14)
+public let XSRefreshLabelTextColor = #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1)

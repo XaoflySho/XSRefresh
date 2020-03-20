@@ -55,7 +55,7 @@ open class XSRefreshHeader: XSRefreshComponent {
         xs.y = -xs.height - ignoredScrollViewContentInsetTop
     }
     
-    override var state: XSRefreshState {
+    override var state: XSRefresh.State {
         set {
             let oldValue = self.state
             if oldValue == newValue {
