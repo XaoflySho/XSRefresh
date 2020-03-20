@@ -12,6 +12,7 @@
 		17BA67E62424BC9500AF6E4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BA67E42424BC9500AF6E4B /* Main.storyboard */; };
 		17BA67E82424BC9900AF6E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BA67E72424BC9900AF6E4B /* Assets.xcassets */; };
 		17BA67EB2424BC9900AF6E4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BA67E92424BC9900AF6E4B /* LaunchScreen.storyboard */; };
+		17BA67F52424C7EA00AF6E4B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA67F42424C7EA00AF6E4B /* TableViewController.swift */; };
 		A4176ECA01829DDE98FE7DA2 /* Pods_XSRefreshExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E981DF8B9152ED5F47BB4C3 /* Pods_XSRefreshExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		17BA67E72424BC9900AF6E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17BA67EA2424BC9900AF6E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17BA67EC2424BC9900AF6E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17BA67F42424C7EA00AF6E4B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7E981DF8B9152ED5F47BB4C3 /* Pods_XSRefreshExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XSRefreshExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CC7338B21B398B6C1AC4FA /* Pods-XSRefreshExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSRefreshExample.release.xcconfig"; path = "Target Support Files/Pods-XSRefreshExample/Pods-XSRefreshExample.release.xcconfig"; sourceTree = "<group>"; };
 		E93EB8AD2A6102AD1DC5511A /* Pods-XSRefreshExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSRefreshExample.debug.xcconfig"; path = "Target Support Files/Pods-XSRefreshExample/Pods-XSRefreshExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				17BA67DE2424BC9500AF6E4B /* AppDelegate.swift */,
 				17BA67E22424BC9500AF6E4B /* ViewController.swift */,
+				17BA67F42424C7EA00AF6E4B /* TableViewController.swift */,
 				17BA67E42424BC9500AF6E4B /* Main.storyboard */,
 				17BA67E72424BC9900AF6E4B /* Assets.xcassets */,
 				17BA67E92424BC9900AF6E4B /* LaunchScreen.storyboard */,
@@ -77,7 +80,6 @@
 				E93EB8AD2A6102AD1DC5511A /* Pods-XSRefreshExample.debug.xcconfig */,
 				D4CC7338B21B398B6C1AC4FA /* Pods-XSRefreshExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,6 +102,7 @@
 				17BA67D72424BC9500AF6E4B /* Sources */,
 				17BA67D82424BC9500AF6E4B /* Frameworks */,
 				17BA67D92424BC9500AF6E4B /* Resources */,
+				2C7BEA1905B1CA9693F5F9FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,6 +160,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2C7BEA1905B1CA9693F5F9FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XSRefreshExample/Pods-XSRefreshExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XSRefreshExample/Pods-XSRefreshExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XSRefreshExample/Pods-XSRefreshExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8D196457AE2047B98539467D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17BA67E32424BC9500AF6E4B /* ViewController.swift in Sources */,
+				17BA67F52424C7EA00AF6E4B /* TableViewController.swift in Sources */,
 				17BA67DF2424BC9500AF6E4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
