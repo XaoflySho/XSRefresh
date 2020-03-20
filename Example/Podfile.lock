@@ -1,0 +1,16 @@
+PODS:
+  - XSRefresh (0.0.1)
+
+DEPENDENCIES:
+  - XSRefresh (from `../`)
+
+EXTERNAL SOURCES:
+  XSRefresh:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XSRefresh: 23f4fff824bfb99ce714ee59372ca5440b7c0561
+
+PODFILE CHECKSUM: b0577ce5d13f0ed8d5c727609af7760367400d2f
+
+COCOAPODS: 1.9.0
