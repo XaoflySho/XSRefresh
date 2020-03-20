@@ -21,16 +21,16 @@ enum XSRefreshState: Int {
     case noMoreData
 }
 
-typealias XSRefreshComponentAction = () -> (Void)
+public typealias XSRefreshComponentAction = () -> (Void)
 
-class XSRefreshComponent: UIView {
+open class XSRefreshComponent: UIView {
     
     // MARK: - 刷新回调
     /// 正在刷新的回调
     var refreshingBlock: XSRefreshComponentAction?
     
     /// 回调对象
-    var refreshingTarget: Any?
+    var refreshingTarget: NSObject?
     
     /// 回调方法
     var refreshingAction: Selector?
@@ -45,50 +45,87 @@ class XSRefreshComponent: UIView {
     
     /// 是否正在刷新
     var refreshing: Bool {
-        return true
+        return (self.state == .refreshing || self.state == .willRefresh)
     }
     
     /// 刷新状态
-    var state: XSRefreshState
+    var state: XSRefreshState = .idle{
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.setNeedsLayout()
+            }
+        }
+    }
     
+    /// 拖拽百分比，根据拖拽进度设置透明度
+    var pullingPercent: CGFloat = 0 {
+        didSet {
+            if self.refreshing {
+                return
+            }
+            if self.automaticallyChangeAlpha {
+                self.alpha = pullingPercent
+            }
+        }
+    }
+    
+    /// 根据拖拽比例自动切换透明度
+    var automaticallyChangeAlpha: Bool = false {
+        didSet {
+            if self.refreshing {
+                return
+            }
+            if automaticallyChangeAlpha {
+                self.alpha = self.pullingPercent
+            } else {
+                self.alpha = 1.0
+            }
+        }
+    }
+    
+    /// 父控件
     private(set) weak var scrollView: UIScrollView?
-    var scrollViewOriginalInset: UIEdgeInsets?
+    /// Scroll View 初始 Inset
+    var scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.zero
     
+    /// Scroll View 手势
     private var pan: UIPanGestureRecognizer?
     
+    // MARK: - 初始化
     override init(frame: CGRect) {
-        state = .idle
         super.init(frame: frame)
         
         prepare()
     }
     
-    required init?(coder: NSCoder) {
-        state = .idle
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         
         prepare()
     }
     
+    /// 初始化
     func prepare() {
         autoresizingMask = .flexibleWidth
         backgroundColor  = .clear
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         placeSubviews()
         super.layoutSubviews()
     }
     
+    /// 设置子控件 Frame
     func placeSubviews() {}
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
         guard let newSuperview = newSuperview as? UIScrollView else {
             return
         }
         
+        /// 移除监听
         removeObservers()
         
         self.scrollView = newSuperview
@@ -100,13 +137,16 @@ class XSRefreshComponent: UIView {
         self.xs.width = scrollView.xs.width
         self.xs.x     = scrollView.xs.insetLeft
         
+        /// 打开垂直方向弹簧效果
         scrollView.alwaysBounceVertical = true
+        /// 记录 Scroll View 初始 Inset
         scrollViewOriginalInset = scrollView.xs.inset
         
+        /// 添加监听
         addObservers()
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         super.draw(rect)
         
         if state == .willRefresh {
@@ -114,6 +154,7 @@ class XSRefreshComponent: UIView {
         }
     }
     
+    /// 添加监听
     func addObservers() {
         let options: NSKeyValueObservingOptions = [.new, .old]
         scrollView?.addObserver(self, forKeyPath: XSRefreshKeyPath.contentOffset, options: options, context: nil)
@@ -122,6 +163,7 @@ class XSRefreshComponent: UIView {
         pan?.addObserver(self, forKeyPath: XSRefreshKeyPath.panState, options: options, context: nil)
     }
     
+    /// 移除监听
     func removeObservers() {
         superview?.removeObserver(self, forKeyPath: XSRefreshKeyPath.contentOffset)
         superview?.removeObserver(self, forKeyPath: XSRefreshKeyPath.contentSize)
@@ -129,7 +171,8 @@ class XSRefreshComponent: UIView {
         pan = nil
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard isUserInteractionEnabled else {
             return
         }
@@ -150,12 +193,62 @@ class XSRefreshComponent: UIView {
         }
     }
     
+    /// 当 Scroll View 的 Content Size 发生改变的时候调用
     func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    /// 当 Scroll View 的 Content Offset 发生改变的时候调用
     func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    /// 当 Scroll View 的拖拽状态发生改变的时候调用
     func scrollViewPanStateDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
     
-    func setRefreshing(target: Any?, action: Selector?) {
+
+    /// 开始刷新
+    public func beginRefreshing(withCompletion block: (() -> Void)? = nil) {
+        
+        beginRefreshingCompletionBlock = block
+        
+        UIView.animate(withDuration: XSRefreshConst.fastAnimationDuration) {
+            self.alpha = 1.0
+        }
+        pullingPercent = 1.0
+        
+        if self.window != nil {
+            state = .refreshing
+        } else {
+            if state != .refreshing {
+                state = .willRefresh
+                setNeedsDisplay()
+            }
+        }
+    }
+    
+    /// 结束刷新
+    public func endRefreshing(withCompletion block: (() -> Void)? = nil) {
+        
+        endRefreshingCompletionBlock = block
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.state = .idle
+        }
+    }
+    
+    /// 设置回调对象和回调方法
+    func setRefreshing(target: NSObject?, action: Selector?) {
         refreshingTarget = target
         refreshingAction = action
+    }
+    
+    /// 触发回调，子类调用
+    func executeRefreshingCallback() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.refreshingBlock?()
+            self.beginRefreshingCompletionBlock?()
+            
+            if let refreshingAction = self.refreshingAction,
+                let refreshingTarget = self.refreshingTarget,
+                refreshingTarget.responds(to: refreshingAction) {
+                refreshingTarget.perform(refreshingAction)
+            }
+        }
     }
 }
