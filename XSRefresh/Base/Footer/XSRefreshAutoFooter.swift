@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class XSRefreshAutoFooter: XSRefreshFooter {
+open class XSRefreshAutoFooter: XSRefreshFooter {
 
     public var automaticallyRefresh: Bool = true
     
@@ -39,7 +39,7 @@ public class XSRefreshAutoFooter: XSRefreshFooter {
         }
     }
     
-    override public func prepare() {
+    override open func prepare() {
         super.prepare()
     }
     

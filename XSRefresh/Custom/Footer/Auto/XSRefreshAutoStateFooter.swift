@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
+open class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
     
     public var labelLeftInset: CGFloat = XSRefreshConst.labelLeftInset
 
@@ -31,7 +31,7 @@ public class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         }
     }
     
-    override public func prepare() {
+    override open func prepare() {
         super.prepare()
         addSubview(stateLabel)
         
@@ -43,7 +43,7 @@ public class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))
     }
     
-    override public func placeSubviews() {
+    override open func placeSubviews() {
         super.placeSubviews()
         
         if stateLabel.constraints.count == 0 {
