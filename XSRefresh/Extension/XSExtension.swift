@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import XSExtensions
 
 extension UILabel {
     class func standard() -> UILabel {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import XSExtensions
 
 private var headerKey: UInt8 = 0
 private var footerKey: UInt8 = 0

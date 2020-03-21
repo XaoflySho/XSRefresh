@@ -24,4 +24,6 @@ Pod::Spec.new do |spec|
   spec.source_files  = "XSRefresh/**/*.swift"
   spec.resource      = "XSRefresh/**/*.bundle"
 
+  spec.dependency 'XSExtensions', '0.0.1'
+
 end
