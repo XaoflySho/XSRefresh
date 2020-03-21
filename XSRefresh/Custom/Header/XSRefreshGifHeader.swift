@@ -33,8 +33,8 @@ open class XSRefreshGifHeader: XSRefreshStateHeader {
         }
     }
     
-    var stateImages: [XSRefresh.State: [UIImage]] = [:]
-    var stateDurations: [XSRefresh.State: TimeInterval] = [:]
+    private var stateImages: [XSRefresh.State: [UIImage]] = [:]
+    private var stateDurations: [XSRefresh.State: TimeInterval] = [:]
     
     override open func prepare() {
         super.prepare()
@@ -68,7 +68,7 @@ open class XSRefreshGifHeader: XSRefreshStateHeader {
         }
     }
     
-    override var pullingPercent: CGFloat {
+    override open var pullingPercent: CGFloat {
         didSet {
             guard let images = stateImages[.idle] else {
                 return
