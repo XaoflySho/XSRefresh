@@ -97,7 +97,7 @@ extension XS where Base: UIScrollView {
         }
     }
     
-    var contentW: CGFloat {
+    var contentWidth: CGFloat {
         set {
             var size = base.contentSize
             size.width = newValue
@@ -107,7 +107,7 @@ extension XS where Base: UIScrollView {
             return base.contentSize.width
         }
     }
-    var contentH: CGFloat {
+    var contentHeight: CGFloat {
         set {
             var size = base.contentSize
             size.height = newValue

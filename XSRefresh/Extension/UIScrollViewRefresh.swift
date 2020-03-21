@@ -28,6 +28,22 @@ public extension XS where Base: UIScrollView {
         }
     }
     
-    
+    var footer: XSRefreshFooter? {
+        set {
+            if let newFooter = newValue {
+                if footer != newValue {
+                    footer?.removeFromSuperview()
+                    base.insertSubview(newFooter, at: 0)
+                    
+                    objc_setAssociatedObject(base, &footerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                }
+            } else {
+                footer?.removeFromSuperview()
+            }
+        }
+        get {
+            return objc_getAssociatedObject(base, &footerKey) as? XSRefreshFooter
+        }
+    }
 }
 

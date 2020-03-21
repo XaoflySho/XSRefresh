@@ -18,12 +18,21 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         tableView.xs.header = XSRefreshStateHeader.headerRefresh(with: self, action: #selector(refresh))
+        tableView.xs.footer = XSRefreshAutoFooter.footerRefresh(with: self, action: #selector(loadMoreData))
     }
 
     @objc
     func refresh() {
         print("REFRESHING")
         tableView.xs.header?.endRefreshing(withCompletion: {
+            print("END")
+        })
+    }
+    
+    @objc
+    func loadMoreData() {
+        print("LOAD MORE DATA")
+        tableView.xs.footer?.endRefreshing(withCompletion: {
             print("END")
         })
     }
