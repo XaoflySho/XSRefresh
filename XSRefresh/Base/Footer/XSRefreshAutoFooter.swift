@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class XSRefreshAutoFooter: XSRefreshFooter {
+open class XSRefreshAutoFooter: XSRefreshFooter {
 
     public var automaticallyRefresh: Bool = true
     
@@ -39,7 +39,7 @@ public class XSRefreshAutoFooter: XSRefreshFooter {
         }
     }
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
     }
     
@@ -119,7 +119,7 @@ public class XSRefreshAutoFooter: XSRefreshFooter {
         super.beginRefreshing(withCompletion: block)
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
                 return

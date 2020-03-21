@@ -1,13 +1,13 @@
 //
 //  XSRefreshBackFooter.swift
-//  Pods-XSRefreshExample
+//  
 //
 //  Created by 邵晓飞 on 2020/3/21.
 //
 
 import UIKit
 
-public class XSRefreshBackFooter: XSRefreshFooter {
+open class XSRefreshBackFooter: XSRefreshFooter {
     
     private var lastRefreshCount: Int = 0
     private var lastBottomDelta: CGFloat = 0
@@ -61,7 +61,7 @@ public class XSRefreshBackFooter: XSRefreshFooter {
         xs.y = max(contentHeight, scrollHeight)
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
                 return

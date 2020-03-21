@@ -16,14 +16,15 @@ public struct XSRefreshConst {
 }
 
 struct XSRefreshKeyPath {
-    static let contentOffset = "contentOffset"
-    static let contentInset  = "contentInset"
-    static let contentSize   = "contentSize"
-    static let panState      = "state"
+    static let contentOffset     = "contentOffset"
+    static let contentInset      = "contentInset"
+    static let contentSize       = "contentSize"
+    static let panState          = "state"
 }
 
 public struct XSRefreshHeaderConst {
     static let lastUpdateTimeKey = "XSRefreshHeaderLastUpdateTimeKey"
+    
     static let idleText          = "XSRefreshHeaderIdleText"
     static let pullingText       = "XSRefreshHeaderPullingText"
     static let refreshingText    = "XSRefreshHeaderRefreshingText"
@@ -33,5 +34,19 @@ public struct XSRefreshHeaderConst {
     static let noneLastDateText  = "XSRefreshHeaderNoneLastDateText"
 }
 
-public let XSRefreshLabelFont = UIFont.boldSystemFont(ofSize: 14)
+public struct XSRefreshAutoFooterConst {
+    static let idleText          = "XSRefreshAutoFooterIdleText"
+    static let refreshingText    = "XSRefreshAutoFooterRefreshingText"
+    static let noMoreDataText    = "XSRefreshAutoFooterNoMoreDataText"
+}
+
+public struct XSRefreshBackFooterConst {
+    static let idleText          = "XSRefreshBackFooterIdleText"
+    static let pullingText       = "XSRefreshBackFooterPullingText"
+    static let refreshingText    = "XSRefreshBackFooterRefreshingText"
+    static let noMoreDataText    = "XSRefreshBackFooterNoMoreDataText"
+}
+
+
+public let XSRefreshLabelFont      = UIFont.boldSystemFont(ofSize: 14)
 public let XSRefreshLabelTextColor = #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1)

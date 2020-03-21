@@ -89,7 +89,7 @@ open class XSRefreshComponent: UIView {
     }
     
     /// 初始化
-    func prepare() {
+    open func prepare() {
         autoresizingMask = .flexibleWidth
         backgroundColor  = .clear
     }
@@ -100,7 +100,7 @@ open class XSRefreshComponent: UIView {
     }
     
     /// 设置子控件 Frame
-    func placeSubviews() {}
+    open func placeSubviews() {}
     
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)

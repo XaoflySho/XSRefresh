@@ -12,9 +12,26 @@ open class XSRefreshHeader: XSRefreshComponent {
     
     /// 创建 Refresh Header
     /// - Parameter block: 回调
-    public class func headerRefresh(with block: @escaping XSRefreshComponentAction) -> XSRefreshHeader {
+    public class func header(WithRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshHeader {
         let header = self.init()
         header.refreshingBlock = block
+        return header
+    }
+    
+    /// 创建 Refresh Header
+    /// - Parameter block: 回调
+    public convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {
+        self.init()
+        self.refreshingBlock = block
+    }
+    
+    /// 创建 Refresh Header
+    /// - Parameters:
+    ///   - target: 回调目标
+    ///   - action: 回调方法
+    public class func header(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshHeader {
+        let header = self.init()
+        header.setRefreshing(target: target, action: action)
         return header
     }
     
@@ -22,10 +39,9 @@ open class XSRefreshHeader: XSRefreshComponent {
     /// - Parameters:
     ///   - target: 回调目标
     ///   - action: 回调方法
-    public class func headerRefresh(with target: NSObject?, action: Selector?) -> XSRefreshHeader {
-        let header = self.init()
-        header.setRefreshing(target: target, action: action)
-        return header
+    public convenience init(withRefreshing target: NSObject?, action: Selector?) {
+        self.init()
+        self.setRefreshing(target: target, action: action)
     }
     
     open var lastUpdatedTimeKey: String = XSRefreshHeaderConst.lastUpdateTimeKey
@@ -43,19 +59,19 @@ open class XSRefreshHeader: XSRefreshComponent {
     // MARK: - Private
     private var insetTDelta: CGFloat = 0
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         
         xs.height = XSRefreshConst.headerHeight
     }
     
-    override func placeSubviews() {
+    override open func placeSubviews() {
         super.placeSubviews()
         
         xs.y = -xs.height - ignoredScrollViewContentInsetTop
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
                 return

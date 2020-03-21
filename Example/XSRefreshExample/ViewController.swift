@@ -17,24 +17,32 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.xs.header = XSRefreshStateHeader.headerRefresh(with: self, action: #selector(refresh))
-        tableView.xs.footer = XSRefreshBackFooter.footerRefresh(with: self, action: #selector(loadMoreData))
+//        tableView.xs.header = XSChiBaoZiHeader.header(withRefreshing: self, action: #selector(refresh))
+//        tableView.xs.header = XSChiBaoZiHeader(withRefreshing: self, action: #selector(refresh))
+        tableView.xs.header = XSChiBaoZiHeader {
+            print("REFRESHING")
+            self.tableView.xs.footer?.resetNoMoreData()
+        }
+//        tableView.xs.footer = XSRefreshBackStateFooter.footer(withRefreshing: self, action: #selector(loadMoreData))
+//        tableView.xs.footer = XSRefreshBackStateFooter(withRefreshing: self, action: #selector(loadMoreData))
+        tableView.xs.footer = XSChiBaoZiAutoFooter {
+            print("LOAD MORE DATA")
+        }
     }
 
     @objc
     func refresh() {
         print("REFRESHING")
-        tableView.xs.header?.endRefreshing(withCompletion: {
-            print("END")
-        })
+        tableView.xs.footer?.resetNoMoreData()
+        
     }
     
     @objc
     func loadMoreData() {
         print("LOAD MORE DATA")
-        tableView.xs.footer?.endRefreshing(withCompletion: {
-            print("END")
-        })
+//        tableView.xs.footer?.endRefreshingWithNoMoreData(completion: {
+//            print("NO MORE DATA - END")
+//        })
     }
 }
 
@@ -58,7 +66,12 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.xs.header?.endRefreshing(withCompletion: {
+            print("END")
+        })
+        tableView.xs.footer?.endRefreshing(withCompletion: {
+            print("END")
+        })
     }
 }
 
