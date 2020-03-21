@@ -45,7 +45,7 @@ public class XSRefreshBackStateFooter: XSRefreshBackFooter {
         }
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             stateLabel.text = stateTitles[state]
         }

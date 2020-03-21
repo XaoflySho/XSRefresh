@@ -119,7 +119,7 @@ public class XSRefreshAutoFooter: XSRefreshFooter {
         super.beginRefreshing(withCompletion: block)
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
                 return

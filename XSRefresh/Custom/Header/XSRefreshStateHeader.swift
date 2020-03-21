@@ -107,7 +107,7 @@ open class XSRefreshStateHeader: XSRefreshHeader {
         }
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             self.stateLabel.text = stateTitles[state]
             self.lastUpdatedTimeKey = XSRefreshHeaderConst.lastUpdateTimeKey

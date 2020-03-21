@@ -58,7 +58,7 @@ public class XSRefreshNormalHeader: XSRefreshStateHeader {
         self.arrowView.tintColor = self.stateLabel.textColor
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             if state == .idle {
                 if oldValue == .refreshing {

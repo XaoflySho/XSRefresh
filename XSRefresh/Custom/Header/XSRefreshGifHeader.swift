@@ -70,10 +70,7 @@ open class XSRefreshGifHeader: XSRefreshStateHeader {
     
     override open var pullingPercent: CGFloat {
         didSet {
-            guard let images = stateImages[.idle] else {
-                return
-            }
-            if state != .idle || images.count == 0 {
+            guard state == .idle, let images = stateImages[.idle], images.count != 0 else {
                 return
             }
             gifView.stopAnimating()
@@ -85,7 +82,7 @@ open class XSRefreshGifHeader: XSRefreshStateHeader {
         }
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             if state == .pulling || state == .refreshing {
                 guard let images = stateImages[state], images.count != 0 else {

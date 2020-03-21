@@ -51,7 +51,7 @@ public class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         }
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             if refreshingTitleHidden, state == .refreshing {
                 stateLabel.text = nil

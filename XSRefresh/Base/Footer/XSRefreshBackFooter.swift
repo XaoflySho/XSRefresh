@@ -61,7 +61,7 @@ public class XSRefreshBackFooter: XSRefreshFooter {
         xs.y = max(contentHeight, scrollHeight)
     }
     
-    override var state: XSRefresh.State {
+    override open var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
                 return
