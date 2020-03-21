@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class XSRefreshBackFooter: XSRefreshFooter {
+open class XSRefreshBackFooter: XSRefreshFooter {
     
     private var lastRefreshCount: Int = 0
     private var lastBottomDelta: CGFloat = 0

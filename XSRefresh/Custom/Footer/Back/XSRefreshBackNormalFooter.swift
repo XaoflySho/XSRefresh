@@ -1,13 +1,13 @@
 //
-//  XSRefreshNormalHeader.swift
+//  XSRefreshBackNormalFooter.swift
 //  Pods-XSRefreshExample
 //
-//  Created by 邵晓飞 on 2020/3/21.
+//  Created by 邵晓飞 on 2020/3/22.
 //
 
 import UIKit
 
-public class XSRefreshNormalHeader: XSRefreshStateHeader {
+open class XSRefreshBackNormalFooter: XSRefreshBackStateFooter {
     
     private(set) lazy var arrowView: UIImageView = {
         let imageView = UIImageView(image: UIImage.loadImage(named: "arrow"))
@@ -22,7 +22,7 @@ public class XSRefreshNormalHeader: XSRefreshStateHeader {
         let view = UIActivityIndicatorView(style: style)
         return view
     }()
-    
+
     override open func prepare() {
         super.prepare()
         addSubview(arrowView)
@@ -32,19 +32,12 @@ public class XSRefreshNormalHeader: XSRefreshStateHeader {
     override open func placeSubviews() {
         super.placeSubviews()
         
-        var arrowCenterX = xs.width * 0.5
+        var arrowCenterX = xs.width * 0.5;
         if !stateLabel.isHidden {
-            let stateWidth = stateLabel.xs.textWidth
-            var timeWidth: CGFloat = 0.0
-            if !lastUpdatedTimeLabel.isHidden {
-                timeWidth = lastUpdatedTimeLabel.xs.textWidth
-            }
-            let textWidth = max(stateWidth, timeWidth)
-            arrowCenterX -= textWidth / 2 + labelLeftInset
+            arrowCenterX -= labelLeftInset + stateLabel.xs.textWidth * 0.5;
         }
-        
-        let arrowCenterY = xs.height * 0.5
-        let arrowCenter = CGPoint(x: arrowCenterX, y: arrowCenterY)
+        let arrowCenterY = xs.height * 0.5;
+        let arrowCenter = CGPoint(x: arrowCenterX, y: arrowCenterY);
         
         if arrowView.constraints.count == 0 {
             arrowView.xs.size = arrowView.image?.size ?? CGSize.zero
@@ -62,7 +55,7 @@ public class XSRefreshNormalHeader: XSRefreshStateHeader {
         didSet {
             if state == .idle {
                 if oldValue == .refreshing {
-                    arrowView.transform = .identity
+                    arrowView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
                     
                     UIView.animate(withDuration: XSRefreshConst.slowAnimationDuration, animations: {
                         self.loadingView.alpha = 0.0
@@ -74,23 +67,28 @@ public class XSRefreshNormalHeader: XSRefreshStateHeader {
                         self.loadingView.stopAnimating()
                         self.arrowView.isHidden = false
                     }
+                    
                 } else {
-                    loadingView.stopAnimating()
                     arrowView.isHidden = false
+                    loadingView.stopAnimating()
+                    
                     UIView.animate(withDuration: XSRefreshConst.fastAnimationDuration) {
-                        self.arrowView.transform = .identity
+                        self.arrowView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
                     }
                 }
             } else if state == .pulling {
-                loadingView.stopAnimating()
                 arrowView.isHidden = false
-                UIView.animate(withDuration: XSRefreshConst.fastAnimationDuration) {
-                    self.arrowView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+                
+                self.loadingView.stopAnimating()
+                UIView.animate(withDuration:XSRefreshConst.fastAnimationDuration) {
+                    self.arrowView.transform = .identity
                 }
             } else if state == .refreshing {
-                loadingView.alpha = 1.0
-                loadingView.startAnimating()
                 arrowView.isHidden = true
+                loadingView.startAnimating()
+            } else if state == .noMoreData {
+                arrowView.isHidden = true
+                loadingView.stopAnimating()
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class XSRefreshBackStateFooter: XSRefreshBackFooter {
+open class XSRefreshBackStateFooter: XSRefreshBackFooter {
     
     public var labelLeftInset: CGFloat = XSRefreshConst.labelLeftInset
 
@@ -27,7 +27,7 @@ public class XSRefreshBackStateFooter: XSRefreshBackFooter {
         return stateTitles[state] ?? ""
     }
     
-    override public func prepare() {
+    override open func prepare() {
         super.prepare()
         addSubview(stateLabel)
         
@@ -37,7 +37,7 @@ public class XSRefreshBackStateFooter: XSRefreshBackFooter {
         setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.noMoreDataText), for: .noMoreData)
     }
     
-    override public func placeSubviews() {
+    override open func placeSubviews() {
         super.placeSubviews()
         
         if stateLabel.constraints.count == 0 {
