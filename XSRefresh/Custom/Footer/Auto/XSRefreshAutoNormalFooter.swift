@@ -31,11 +31,11 @@ open class XSRefreshAutoNormalFooter: XSRefreshAutoStateFooter {
         }
         
         var loadingCenterX = xs.width * 0.5;
-        if !self.refreshingTitleHidden {
+        if !refreshingTitleHidden {
             loadingCenterX -= stateLabel.xs.textWidth * 0.5 + labelLeftInset;
         }
         let loadingCenterY = xs.height * 0.5;
-        self.loadingView.center = CGPoint(x: loadingCenterX, y: loadingCenterY)
+        loadingView.center = CGPoint(x: loadingCenterX, y: loadingCenterY)
     }
     
     open override var state: XSRefresh.State {
