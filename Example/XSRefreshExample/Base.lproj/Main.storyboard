@@ -84,18 +84,49 @@
         <!--About-->
         <scene sceneID="GOP-P5-rvR">
             <objects>
-                <viewController id="yfg-nk-3P4" sceneMemberID="viewController">
+                <viewController id="yfg-nk-3P4" customClass="AboutViewController" customModule="XSRefreshExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TjW-0q-Gqy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jde-Je-AMg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Eh-mo-lvb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pl0-Gd-U8d">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4Eh-mo-lvb" secondAttribute="trailing" id="1bC-WS-DoS"/>
+                            <constraint firstItem="jde-Je-AMg" firstAttribute="leading" secondItem="TjW-0q-Gqy" secondAttribute="leading" id="Fcq-cy-bNM"/>
+                            <constraint firstAttribute="top" secondItem="4Eh-mo-lvb" secondAttribute="top" id="H3P-eX-EYi"/>
+                            <constraint firstItem="jde-Je-AMg" firstAttribute="top" secondItem="TjW-0q-Gqy" secondAttribute="top" id="P1o-bf-TIZ"/>
+                            <constraint firstItem="4Eh-mo-lvb" firstAttribute="leading" secondItem="TjW-0q-Gqy" secondAttribute="leading" id="QQV-zF-6DC"/>
+                            <constraint firstItem="m6A-Oo-hmB" firstAttribute="top" secondItem="4Eh-mo-lvb" secondAttribute="bottom" id="nYq-Jx-n0N"/>
+                            <constraint firstAttribute="trailing" secondItem="jde-Je-AMg" secondAttribute="trailing" id="ro2-w3-t0c"/>
+                            <constraint firstAttribute="bottom" secondItem="jde-Je-AMg" secondAttribute="bottom" id="rpi-8Q-t9r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m6A-Oo-hmB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="person.fill" catalog="system" id="1Dp-5k-CaX"/>
+                    <connections>
+                        <outlet property="webView" destination="jde-Je-AMg" id="35k-bw-Yf5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFZ-PI-Vdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="867"/>
+            <point key="canvasLocation" x="1039.1304347826087" y="866.51785714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2Jp-YU-Nqq">
