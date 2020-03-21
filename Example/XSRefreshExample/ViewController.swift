@@ -17,13 +17,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.header = XSRefreshStateHeader.headerRefresh(with: self, action: #selector(refresh))
+        tableView.xs.header = XSRefreshStateHeader.headerRefresh(with: self, action: #selector(refresh))
     }
 
     @objc
     func refresh() {
         print("REFRESHING")
-        tableView.header?.endRefreshing(withCompletion: {
+        tableView.xs.header?.endRefreshing(withCompletion: {
             print("END")
         })
     }
