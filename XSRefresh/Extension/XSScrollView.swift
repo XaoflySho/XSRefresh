@@ -118,3 +118,19 @@ extension XS where Base: UIScrollView {
         }
     }
 }
+
+extension XS where Base: UIScrollView {
+    var totalDataCount: Int {
+        var totalCount: Int = 0;
+        if let tableView = base as? UITableView {
+            for section in 0 ..< tableView.numberOfSections {
+                totalCount += tableView.numberOfRows(inSection: section)
+            }
+        } else if let collectionView = base as? UICollectionView {
+            for section in 0 ..< collectionView.numberOfSections {
+                totalCount += collectionView.numberOfItems(inSection: section)
+            }
+        }
+        return totalCount
+    }
+}

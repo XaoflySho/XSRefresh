@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         tableView.xs.header = XSRefreshStateHeader.headerRefresh(with: self, action: #selector(refresh))
-        tableView.xs.footer = XSRefreshAutoFooter.footerRefresh(with: self, action: #selector(loadMoreData))
+        tableView.xs.footer = XSRefreshBackFooter.footerRefresh(with: self, action: #selector(loadMoreData))
     }
 
     @objc
