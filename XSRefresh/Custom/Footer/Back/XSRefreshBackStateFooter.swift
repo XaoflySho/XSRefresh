@@ -31,10 +31,10 @@ public class XSRefreshBackStateFooter: XSRefreshBackFooter {
         super.prepare()
         addSubview(stateLabel)
         
-        setTitle("1", for: .idle)
-        setTitle("2", for: .pulling)
-        setTitle("3", for: .refreshing)
-        setTitle("4", for: .noMoreData)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.idleText), for: .idle)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.pullingText), for: .pulling)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.refreshingText), for: .refreshing)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.noMoreDataText), for: .noMoreData)
     }
     
     override func placeSubviews() {

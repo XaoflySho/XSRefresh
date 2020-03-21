@@ -31,30 +31,42 @@ public class XSRefreshStateHeader: XSRefreshHeader {
     }
     
     override public var lastUpdatedTimeKey: String {
-        set {
-            super.lastUpdatedTimeKey = newValue
-            
+        didSet {
             if lastUpdatedTimeLabel.isHidden {
                 return
             }
             
-            let lastUpdatedTime = UserDefaults.standard.object(forKey: newValue) as? Date
+            let lastUpdatedTime = UserDefaults.standard.object(forKey: lastUpdatedTimeKey) as? Date
             if let lastUpdatedTimeText = lastUpdatedTimeText {
                 lastUpdatedTimeLabel.text = lastUpdatedTimeText(lastUpdatedTime)
                 return
             }
             
             if let lastUpdatedTime = lastUpdatedTime {
-                // TODO: 时间格式化
+                let calendar = NSCalendar(calendarIdentifier: .gregorian)
+                let unitFlags: NSCalendar.Unit = [.year, .month, .day, .hour, .minute]
+                let components1 = calendar?.components(unitFlags, from: lastUpdatedTime)
+                let components2 = calendar?.components(unitFlags, from: Date())
+
+                let formatter = DateFormatter()
+                var isToday = false
+                if components1?.day == components2?.day {
+                    formatter.dateFormat = " HH:mm"
+                    isToday = true
+                } else if components1?.year == components2?.year {
+                    formatter.dateFormat = "MM-dd HH:mm"
+                } else {
+                    formatter.dateFormat = "yyyy-MM-dd HH:mm"
+                }
                 
-                lastUpdatedTimeLabel.text = "00:00:--"
+                let timeString = formatter.string(from: lastUpdatedTime)
+                
+                let string = "\(Bundle.localizedString(for: XSRefreshHeaderConst.lastTimeText))\(isToday ? Bundle.localizedString(for: XSRefreshHeaderConst.dateTodayText) : "")\(timeString)"
+                lastUpdatedTimeLabel.text = string
             } else {
-                // TODO: 文本格式化
-                lastUpdatedTimeLabel.text = "00:00:--"
+                let string = "\(Bundle.localizedString(for: XSRefreshHeaderConst.lastTimeText))\(Bundle.localizedString(for: XSRefreshHeaderConst.noneLastDateText))"
+                lastUpdatedTimeLabel.text = string
             }
-        }
-        get {
-            return super.lastUpdatedTimeKey
         }
     }
     
@@ -63,10 +75,9 @@ public class XSRefreshStateHeader: XSRefreshHeader {
         addSubview(stateLabel)
         addSubview(lastUpdatedTimeLabel)
         
-        // TODO: 文本
-        setTitle("1", for: .idle)
-        setTitle("2", for: .pulling)
-        setTitle("3", for: .refreshing)
+        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.idleText), for: .idle)
+        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.pullingText), for: .pulling)
+        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.refreshingText), for: .refreshing)
     }
     
     override func placeSubviews() {
@@ -85,13 +96,13 @@ public class XSRefreshStateHeader: XSRefreshHeader {
             }
         } else {
             let stateLabelHeight = xs.height * 0.5
-            // 状态
+            
             if noConstrainsOnStatusLabel {
                 stateLabel.frame = CGRect(x: 0, y: 0, width: xs.width, height: stateLabelHeight)
             }
-            // 更新时间
+            
             if lastUpdatedTimeLabel.constraints.count == 0 {
-                lastUpdatedTimeLabel.frame = CGRect(x: 0, y: stateLabelHeight, width: xs.width, height: xs.height - stateLabelHeight)
+                lastUpdatedTimeLabel.frame = CGRect(x: 0, y: stateLabelHeight, width: xs.width, height: xs.height - lastUpdatedTimeLabel.xs.y)
             }
         }
     }

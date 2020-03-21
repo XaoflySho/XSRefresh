@@ -35,9 +35,9 @@ public class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         super.prepare()
         addSubview(stateLabel)
         
-        setTitle("1", for: .idle)
-        setTitle("2", for: .refreshing)
-        setTitle("3", for: .noMoreData)
+        setTitle(Bundle.localizedString(for: XSRefreshAutoFooterConst.idleText), for: .idle)
+        setTitle(Bundle.localizedString(for: XSRefreshAutoFooterConst.refreshingText), for: .refreshing)
+        setTitle(Bundle.localizedString(for: XSRefreshAutoFooterConst.noMoreDataText), for: .noMoreData)
         
         stateLabel.isUserInteractionEnabled = true
         stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))

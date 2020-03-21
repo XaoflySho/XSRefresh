@@ -33,19 +33,19 @@ class ViewController: UIViewController {
     @objc
     func loadMoreData() {
         print("LOAD MORE DATA")
-//        tableView.xs.footer?.endRefreshing(withCompletion: {
-//            print("END")
-//        })
-        tableView.xs.footer?.endRefreshingWithNoMoreData(completion: {
-            print("NO MORE DATA - END")
+        tableView.xs.footer?.endRefreshing(withCompletion: {
+            print("END")
         })
+//        tableView.xs.footer?.endRefreshingWithNoMoreData(completion: {
+//            print("NO MORE DATA - END")
+//        })
     }
 }
 
 extension ViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

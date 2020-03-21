@@ -24,6 +24,7 @@ struct XSRefreshKeyPath {
 
 public struct XSRefreshHeaderConst {
     static let lastUpdateTimeKey = "XSRefreshHeaderLastUpdateTimeKey"
+    
     static let idleText          = "XSRefreshHeaderIdleText"
     static let pullingText       = "XSRefreshHeaderPullingText"
     static let refreshingText    = "XSRefreshHeaderRefreshingText"
@@ -32,6 +33,20 @@ public struct XSRefreshHeaderConst {
     static let dateTodayText     = "XSRefreshHeaderDateTodayText"
     static let noneLastDateText  = "XSRefreshHeaderNoneLastDateText"
 }
+
+public struct XSRefreshAutoFooterConst {
+    static let idleText          = "XSRefreshAutoFooterIdleText"
+    static let refreshingText    = "XSRefreshAutoFooterRefreshingText"
+    static let noMoreDataText    = "XSRefreshAutoFooterNoMoreDataText"
+}
+
+public struct XSRefreshBackFooterConst {
+    static let idleText          = "XSRefreshBackFooterIdleText"
+    static let pullingText       = "XSRefreshBackFooterPullingText"
+    static let refreshingText    = "XSRefreshBackFooterRefreshingText"
+    static let noMoreDataText    = "XSRefreshBackFooterNoMoreDataText"
+}
+
 
 public let XSRefreshLabelFont = UIFont.boldSystemFont(ofSize: 14)
 public let XSRefreshLabelTextColor = #colorLiteral(red: 0.3529411765, green: 0.3529411765, blue: 0.3529411765, alpha: 1)

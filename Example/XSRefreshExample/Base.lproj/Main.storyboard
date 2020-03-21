@@ -62,11 +62,11 @@
             </objects>
             <point key="canvasLocation" x="1952.1739130434785" y="137.94642857142856"/>
         </scene>
-        <!--XSRefresh-->
+        <!--Example-->
         <scene sceneID="Wrx-aL-PFH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zth-cn-89q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="XSRefresh" image="star.fill" catalog="system" id="gXV-P2-Hqj"/>
+                    <tabBarItem key="tabBarItem" title="Example" image="star.fill" catalog="system" id="gXV-P2-Hqj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xW1-Oj-Iwa">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
