@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--XSRefresh-->
+        <!--XSRefresh Example-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="XSRefreshExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="XSRefresh" id="32t-c7-69P"/>
+                    <navigationItem key="navigationItem" title="XSRefresh Example" id="32t-c7-69P"/>
                     <connections>
                         <outlet property="tableView" destination="fTz-R8-uO3" id="59r-J3-NeM"/>
                     </connections>

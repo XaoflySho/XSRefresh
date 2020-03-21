@@ -1,12 +1,12 @@
 
 /* Class = "UITabBarItem"; title = "About"; ObjectID = "1Dp-5k-CaX"; */
-"1Dp-5k-CaX.title" = "About";
+"1Dp-5k-CaX.title" = "关于";
 
 /* Class = "UINavigationItem"; title = "XSRefresh"; ObjectID = "32t-c7-69P"; */
-"32t-c7-69P.title" = "XSRefresh";
+"32t-c7-69P.title" = "XSRefresh 示例";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "QUi-sc-nvT"; */
-"QUi-sc-nvT.text" = "Title";
+"QUi-sc-nvT.text" = "标题";
 
 /* Class = "UITabBarItem"; title = "XSRefresh"; ObjectID = "gXV-P2-Hqj"; */
-"gXV-P2-Hqj.title" = "XSRefresh";
+"gXV-P2-Hqj.title" = "示例";
