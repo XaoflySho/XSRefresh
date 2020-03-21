@@ -17,8 +17,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.xs.header = XSChiBaoZiHeader.headerRefresh(with: self, action: #selector(refresh))
-        tableView.xs.footer = XSRefreshBackStateFooter.footerRefresh(with: self, action: #selector(loadMoreData))
+//        tableView.xs.header = XSChiBaoZiHeader.header(withRefreshing: self, action: #selector(refresh))
+//        tableView.xs.header = XSChiBaoZiHeader(withRefreshing: self, action: #selector(refresh))
+        tableView.xs.header = XSChiBaoZiHeader {
+            print("REFRESHING")
+            self.tableView.xs.footer?.resetNoMoreData()
+        }
+//        tableView.xs.footer = XSRefreshBackStateFooter.footer(withRefreshing: self, action: #selector(loadMoreData))
+//        tableView.xs.footer = XSRefreshBackStateFooter(withRefreshing: self, action: #selector(loadMoreData))
+        tableView.xs.footer = XSChiBaoZiAutoFooter {
+            print("LOAD MORE DATA")
+        }
     }
 
     @objc
