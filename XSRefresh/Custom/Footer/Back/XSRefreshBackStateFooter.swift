@@ -27,7 +27,7 @@ public class XSRefreshBackStateFooter: XSRefreshBackFooter {
         return stateTitles[state] ?? ""
     }
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         addSubview(stateLabel)
         
@@ -37,7 +37,7 @@ public class XSRefreshBackStateFooter: XSRefreshBackFooter {
         setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.noMoreDataText), for: .noMoreData)
     }
     
-    override func placeSubviews() {
+    override public func placeSubviews() {
         super.placeSubviews()
         
         if stateLabel.constraints.count == 0 {

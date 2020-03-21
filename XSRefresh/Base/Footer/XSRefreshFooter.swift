@@ -47,7 +47,7 @@ open class XSRefreshFooter: XSRefreshComponent {
         }
     }
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         
         xs.height = XSRefreshConst.footerHeight

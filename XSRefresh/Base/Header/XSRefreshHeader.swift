@@ -43,13 +43,13 @@ open class XSRefreshHeader: XSRefreshComponent {
     // MARK: - Private
     private var insetTDelta: CGFloat = 0
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         
         xs.height = XSRefreshConst.headerHeight
     }
     
-    override func placeSubviews() {
+    override open func placeSubviews() {
         super.placeSubviews()
         
         xs.y = -xs.height - ignoredScrollViewContentInsetTop

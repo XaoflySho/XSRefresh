@@ -9,12 +9,12 @@ import UIKit
 
 public class XSRefreshNormalHeader: XSRefreshStateHeader {
     
-    private(set) var arrowView: UIImageView = {
+    private(set) lazy var arrowView: UIImageView = {
         let imageView = UIImageView(image: UIImage.loadImage(named: "arrow"))
         return imageView
     }()
     
-    private(set) var loadingView: UIActivityIndicatorView = {
+    private(set) lazy var loadingView: UIActivityIndicatorView = {
         var style = UIActivityIndicatorView.Style.gray
         if #available(iOS 13.0, *) {
             style = UIActivityIndicatorView.Style.medium
@@ -23,13 +23,13 @@ public class XSRefreshNormalHeader: XSRefreshStateHeader {
         return view
     }()
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         addSubview(arrowView)
         addSubview(loadingView)
     }
     
-    override func placeSubviews() {
+    override public func placeSubviews() {
         super.placeSubviews()
         
         var arrowCenterX = xs.width * 0.5

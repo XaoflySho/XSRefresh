@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class XSRefreshStateHeader: XSRefreshHeader {
+open class XSRefreshStateHeader: XSRefreshHeader {
 
     public var lastUpdatedTimeText: ((_ lastUpdatedTime: Date?) -> String)?
     
@@ -70,7 +70,7 @@ public class XSRefreshStateHeader: XSRefreshHeader {
         }
     }
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         addSubview(stateLabel)
         addSubview(lastUpdatedTimeLabel)
@@ -80,7 +80,7 @@ public class XSRefreshStateHeader: XSRefreshHeader {
         setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.refreshingText), for: .refreshing)
     }
     
-    override func placeSubviews() {
+    override open func placeSubviews() {
         super.placeSubviews()
         
         if stateLabel.isHidden {

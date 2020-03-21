@@ -31,7 +31,7 @@ public class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         }
     }
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         addSubview(stateLabel)
         
@@ -43,7 +43,7 @@ public class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))
     }
     
-    override func placeSubviews() {
+    override public func placeSubviews() {
         super.placeSubviews()
         
         if stateLabel.constraints.count == 0 {

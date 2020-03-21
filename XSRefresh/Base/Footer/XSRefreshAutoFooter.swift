@@ -39,7 +39,7 @@ public class XSRefreshAutoFooter: XSRefreshFooter {
         }
     }
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
     }
     
