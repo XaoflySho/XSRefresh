@@ -23,7 +23,7 @@ public class XSRefreshAutoFooter: XSRefreshFooter {
     private var leftTriggerTimes: Int = 0
     
     public override func willMove(toSuperview newSuperview: UIView?) {
-        superview?.willMove(toSuperview: newSuperview)
+        super.willMove(toSuperview: newSuperview)
         guard let scrollView = scrollView else {
             return
         }
@@ -37,6 +37,10 @@ public class XSRefreshAutoFooter: XSRefreshFooter {
                 scrollView.xs.insetBottom -= xs.height
             }
         }
+    }
+    
+    override func prepare() {
+        super.prepare()
     }
     
     override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {

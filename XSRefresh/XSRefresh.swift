@@ -24,7 +24,7 @@ public class XSRefresh {
     }
 }
 
-public typealias XSRefreshComponentAction = () -> (Void)
+public typealias XSRefreshComponentAction = () -> Void
 
 public final class XS<Base> {
     public let base: Base
