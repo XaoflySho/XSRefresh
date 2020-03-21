@@ -30,7 +30,10 @@ open class XSRefreshFooter: XSRefreshComponent {
     /// 忽略 Scroll View 的 Content Inset 底部距离
     public var ignoredScrollViewContentInsetBottom: CGFloat = 0
     
-    public func endRefreshingWithNoMoreData() {
+    public func endRefreshingWithNoMoreData(completion block: (() -> Void)? = nil) {
+        
+        endRefreshingCompletionBlock = block
+        
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.state = .noMoreData

@@ -10,7 +10,7 @@ import UIKit
 
 public class XSRefresh {
     /// 刷新控件的状态
-    enum State: Int {
+    public enum State: Int {
         /// 闲置
         case idle = 1
         /// 松开就可以进行刷新

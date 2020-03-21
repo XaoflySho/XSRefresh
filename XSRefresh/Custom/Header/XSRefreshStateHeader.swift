@@ -25,7 +25,7 @@ public class XSRefreshStateHeader: XSRefreshHeader {
     
     var stateTitles: [XSRefresh.State: String] = [:]
     
-    func setTitle(_ text: String, for state: XSRefresh.State) {
+    public func setTitle(_ text: String, for state: XSRefresh.State) {
         stateTitles[state] = text
         stateLabel.text = stateTitles[state]
     }

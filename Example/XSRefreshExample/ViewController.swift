@@ -18,12 +18,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         tableView.xs.header = XSRefreshStateHeader.headerRefresh(with: self, action: #selector(refresh))
-        tableView.xs.footer = XSRefreshBackFooter.footerRefresh(with: self, action: #selector(loadMoreData))
+        tableView.xs.footer = XSRefreshBackStateFooter.footerRefresh(with: self, action: #selector(loadMoreData))
     }
 
     @objc
     func refresh() {
         print("REFRESHING")
+        tableView.xs.footer?.resetNoMoreData()
         tableView.xs.header?.endRefreshing(withCompletion: {
             print("END")
         })
@@ -32,8 +33,11 @@ class ViewController: UIViewController {
     @objc
     func loadMoreData() {
         print("LOAD MORE DATA")
-        tableView.xs.footer?.endRefreshing(withCompletion: {
-            print("END")
+//        tableView.xs.footer?.endRefreshing(withCompletion: {
+//            print("END")
+//        })
+        tableView.xs.footer?.endRefreshingWithNoMoreData(completion: {
+            print("NO MORE DATA - END")
         })
     }
 }
@@ -41,7 +45,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
