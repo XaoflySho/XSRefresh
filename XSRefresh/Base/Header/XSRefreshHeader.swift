@@ -56,17 +56,12 @@ open class XSRefreshHeader: XSRefreshComponent {
     }
     
     override var state: XSRefresh.State {
-        set {
-            let oldValue = self.state
-            if oldValue == newValue {
-                return
-            }
-            super.state = newValue
+        didSet {
             guard let scrollView = self.scrollView else {
                 return
             }
             
-            switch newValue {
+            switch state {
             case .idle:
                 if oldValue != .refreshing {
                     return
@@ -110,9 +105,6 @@ open class XSRefreshHeader: XSRefreshComponent {
             default:
                 break
             }
-        }
-        get {
-            return super.state
         }
     }
     

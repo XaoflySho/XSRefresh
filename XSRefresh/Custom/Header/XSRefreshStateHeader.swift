@@ -97,18 +97,9 @@ public class XSRefreshStateHeader: XSRefreshHeader {
     }
     
     override var state: XSRefresh.State {
-        set {
-            let oldValue = self.state
-            if oldValue == newValue {
-                return
-            }
-            super.state = newValue
-            
-            self.stateLabel.text = stateTitles[newValue]
+        didSet {
+            self.stateLabel.text = stateTitles[state]
             self.lastUpdatedTimeKey = XSRefreshHeaderConst.lastUpdateTimeKey
-        }
-        get {
-            return super.state
         }
     }
 }

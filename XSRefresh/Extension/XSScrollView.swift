@@ -97,7 +97,7 @@ extension XS where Base: UIScrollView {
         }
     }
     
-    var contentW: CGFloat {
+    var contentWidth: CGFloat {
         set {
             var size = base.contentSize
             size.width = newValue
@@ -107,7 +107,7 @@ extension XS where Base: UIScrollView {
             return base.contentSize.width
         }
     }
-    var contentH: CGFloat {
+    var contentHeight: CGFloat {
         set {
             var size = base.contentSize
             size.height = newValue
@@ -116,5 +116,21 @@ extension XS where Base: UIScrollView {
         get {
             return base.contentSize.height
         }
+    }
+}
+
+extension XS where Base: UIScrollView {
+    var totalDataCount: Int {
+        var totalCount: Int = 0;
+        if let tableView = base as? UITableView {
+            for section in 0 ..< tableView.numberOfSections {
+                totalCount += tableView.numberOfRows(inSection: section)
+            }
+        } else if let collectionView = base as? UICollectionView {
+            for section in 0 ..< collectionView.numberOfSections {
+                totalCount += collectionView.numberOfItems(inSection: section)
+            }
+        }
+        return totalCount
     }
 }
