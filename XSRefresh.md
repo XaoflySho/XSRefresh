@@ -4,7 +4,7 @@
 
 The Class Structure Chart of XSRefresh:
 
-![Mindmap](/...)
+![Mindmap](../Images/Mindmap.png)
 
 - `The class of red text` in the chart：You can use them directly
     - The drop-down refresh control types

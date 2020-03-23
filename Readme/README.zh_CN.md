@@ -2,29 +2,29 @@
 
 ![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)
 
-An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.com/CoderMJLee/MJRefresh).
+一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
 **[Release notes](https://github.com/XaoflySho/XSRefresh/releases)**
 
-[English](README.md)|[简体中文](Readme/README.zh_CN.md)
+[English](../README.md)|[简体中文](README.zh_CN.md)
 
-## Install
+## 安装
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate XSRefresh into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org/) 是 Cocoa 项目的依赖项管理器。 有关使用和安装说明，请访问其网站。 要使用 CocoaPods 将 XSRefresh 集成到 Xcode 项目中，请在`Podfile`中指定：
 
 ```ruby
 pod 'XSRefresh'
 ```
 
-### Manual import
+### 手动导入
 
-Drag All files in the `XSRefresh` folder to project.
+拖动 XSRefresh 文件夹中的所有文件到项目中。
 
-## Usage
+## 使用
 
-### Quick start
+### 快速开始
 
 ```swift 
 import XSRefresh
@@ -48,7 +48,7 @@ func tableViewRefreshSetting() {
 }
 ```
 
-### More
+### 更多
 
 ```swift
 import XSRefresh
@@ -81,15 +81,15 @@ func tableViewRefreshSetting() {
 }
 ```
 
-## Example Readmes
+## 示例说明
 
-To see how the specification has been applied, see the [example-readmes](https://github.com/XaoflySho/XSRefresh).
+要了解如何应用该规范，请参见[example-readmes](../XSRefresh.md)。
 
-## Maintainers
+## 维护
 
 [@XaoflySho](https://github.com/XaoflySho).
 
-## License
+## 许可证
 
 [MIT](https://github.com/RichardLitt/standard-readme/blob/master/LICENSE) © Xaofly Sho
 
