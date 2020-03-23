@@ -8,27 +8,32 @@
 
 import UIKit
 import WebKit
+import XSRefresh
 
 class AboutViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
     
+    let request = URLRequest(url: URL(string: "https://github.com/XaoflySho/XSRefresh")!)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let request = URLRequest(url: URL(string: "https://github.com/XaoflySho/XSRefresh")!)
-        webView.load(request)
+        webView.navigationDelegate = self
+        
+        self.webView.scrollView.xs.header = XSRefreshNormalHeader {
+            self.webView.load(self.request)
+        }
+        
+        self.webView.scrollView.xs.header?.beginRefreshing()
+    }
+
+}
+
+extension AboutViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.scrollView.xs.header?.endRefreshing()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
