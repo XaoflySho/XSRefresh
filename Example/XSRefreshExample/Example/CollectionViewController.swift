@@ -86,4 +86,8 @@ class CollectionViewController: UICollectionViewController {
     }
     */
     
+    deinit {
+        print("Deinit")
+    }
+    
 }

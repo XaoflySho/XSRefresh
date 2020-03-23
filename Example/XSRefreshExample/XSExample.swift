@@ -16,6 +16,6 @@ class XSExample: NSObject {
     
     var methods: [String] = []
     
-    var viewControllerClass: UIViewController = UIViewController()
+    var viewControllerClass: UIViewController.Type = UIViewController.self
     
 }
