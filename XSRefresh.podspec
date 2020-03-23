@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "XSRefresh"
-  spec.version       = "0.0.1"
+  spec.version       = "0.0.2"
   spec.license       = { :type => "MIT", :file => "LICENSE" }
   
   spec.homepage      = "https://github.com/XaoflySho/XSRefresh"
@@ -23,7 +23,5 @@ Pod::Spec.new do |spec|
   
   spec.source_files  = "XSRefresh/**/*.swift"
   spec.resource      = "XSRefresh/**/*.bundle"
-
-  spec.dependency 'XSExtensions', '0.0.1'
-
+  
 end
