@@ -2,23 +2,23 @@
 
 [English](README.md)|[简体中文](README.zh_CN.md)
 
-The Class Structure Chart of XSRefresh:
+XSRefresh的类结构图：
 
 ![Mindmap](../Images/Mindmap.png)
 
-- `The class of red text` in the chart：You can use them directly
-    - The drop-down refresh control types
-        - Normal：`XSRefreshNormalHeader`
-        - Gif：`XSRefreshGifHeader`
-    - The pull to refresh control types
-        - Auto refresh
-            - Normal：`XSRefreshAutoNormalFooter`
-            - Gif：`XSRefreshAutoGifFooter`
-        - Auto Back
-            - Normal：`XSRefreshBackNormalFooter`
-            - Gif：`XSRefreshBackGifFooter`
-- `The class of non-red text` in the chart：For inheritance，to use DIY the control of refresh
-- About how to DIY the control of refresh，You can refer the `XSRefreshExample`
+- 上图中`红色文字的类` ：你可以直接使用
+    - 下拉刷新控件类：
+        - 普通：`XSRefreshNormalHeader`
+        - 动图：`XSRefreshGifHeader`
+    - 上拉加载控件类：
+        - 自动加载：
+            - 普通：`XSRefreshAutoNormalFooter`
+            - 动图：`XSRefreshAutoGifFooter`
+        - 回弹加载：
+            - 普通：`XSRefreshBackNormalFooter`
+            - 动图：`XSRefreshBackGifFooter`
+- 上图中`非红色文字的类` ：可以继承，自定义刷新控件。
+- 关于如何自定义刷新控件，可以参考`XSRefreshExample`。
 
 ### XSRefreshComponent
 

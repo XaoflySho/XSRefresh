@@ -26,7 +26,7 @@ Drag All files in the `XSRefresh` folder to project.
 
 ### Quick start
 
-```swift 
+```swift
 import XSRefresh
 
 func tableViewRefreshSetting() {

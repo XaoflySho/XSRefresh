@@ -26,7 +26,7 @@ pod 'XSRefresh'
 
 ### 快速开始
 
-```swift 
+```swift
 import XSRefresh
 
 func tableViewRefreshSetting() {
@@ -83,7 +83,7 @@ func tableViewRefreshSetting() {
 
 ## 示例说明
 
-要了解如何应用该规范，请参见[example-readmes](Example/README.zh_CN.md)。
+要了解如何应用该规范，请参见[example-readmes](../Example/README.zh_CN.md)。
 
 ## 维护
 
