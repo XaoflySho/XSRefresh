@@ -16,14 +16,14 @@ open class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         return label
     }()
     
-    var stateTitles: [XSRefresh.State: String] = [:]
+    open var stateTitles: [XSRefresh.State: String] = [:]
 
     public func setTitle(_ text: String, for state: XSRefresh.State) {
         stateTitles[state] = text
-        stateLabel.text = stateTitles[state]
+        stateLabel.text = stateTitles[self.state]
     }
     
-    var refreshingTitleHidden: Bool = false
+    public var refreshingTitleHidden: Bool = false
     
     @objc private func stateLabelClick() {
         if state == .idle {

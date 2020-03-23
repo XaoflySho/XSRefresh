@@ -14,10 +14,10 @@ open class XSRefreshComponent: UIView {
     var refreshingBlock: XSRefreshComponentAction?
     
     /// 回调对象
-    var refreshingTarget: NSObject?
+    private weak var refreshingTarget: NSObject?
     
     /// 回调方法
-    var refreshingAction: Selector?
+    private var refreshingAction: Selector?
     
     // MARK: - 刷新状态控制
     /// 进入刷新后的回调
@@ -28,12 +28,12 @@ open class XSRefreshComponent: UIView {
     var endRefreshingCompletionBlock: XSRefreshComponentAction?
     
     /// 是否正在刷新
-    var refreshing: Bool {
+    open var refreshing: Bool {
         return (self.state == .refreshing || self.state == .willRefresh)
     }
     
     /// 刷新状态
-    var state: XSRefresh.State = .idle {
+    open var state: XSRefresh.State = .idle {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.setNeedsLayout()
@@ -42,7 +42,7 @@ open class XSRefreshComponent: UIView {
     }
     
     /// 拖拽百分比，根据拖拽进度设置透明度
-    var pullingPercent: CGFloat = 0 {
+    open var pullingPercent: CGFloat = 0 {
         didSet {
             if self.refreshing {
                 return
@@ -54,7 +54,7 @@ open class XSRefreshComponent: UIView {
     }
     
     /// 根据拖拽比例自动切换透明度
-    var automaticallyChangeAlpha: Bool = false {
+    open var automaticallyChangeAlpha: Bool = false {
         didSet {
             if self.refreshing {
                 return

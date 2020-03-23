@@ -27,7 +27,7 @@ open class XSRefreshStateHeader: XSRefreshHeader {
     
     public func setTitle(_ text: String, for state: XSRefresh.State) {
         stateTitles[state] = text
-        stateLabel.text = stateTitles[state]
+        stateLabel.text = stateTitles[self.state]
     }
     
     override public var lastUpdatedTimeKey: String {

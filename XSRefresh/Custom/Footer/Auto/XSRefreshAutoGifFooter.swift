@@ -51,6 +51,7 @@ open class XSRefreshAutoGifFooter: XSRefreshAutoStateFooter {
         }
         
         gifView.frame = bounds;
+        
         if refreshingTitleHidden {
             gifView.contentMode = .center;
         } else {

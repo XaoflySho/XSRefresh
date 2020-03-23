@@ -1,8 +1,8 @@
 //
-//  AboutViewController.swift
+//  XSWKWebViewViewController.swift
 //  XSRefreshExample
 //
-//  Created by 邵晓飞 on 2020/3/21.
+//  Created by 邵晓飞 on 2020/3/23.
 //  Copyright © 2020 zlucy. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import XSRefresh
 
-class AboutViewController: UIViewController {
+class XSWKWebViewViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
     
@@ -18,19 +18,27 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         webView.navigationDelegate = self
         
-        self.webView.scrollView.xs.header = XSRefreshNormalHeader {
+        let header = XSRefreshNormalHeader {
             self.webView.load(self.request)
         }
+        header.stateLabel.isHidden = true
+        header.lastUpdatedTimeLabel.isHidden = true
         
-        self.webView.scrollView.xs.header?.beginRefreshing()
+        self.webView.scrollView.xs.header = header
+        
+        header.beginRefreshing()
     }
 
+    deinit {
+        print("Deinit")
+    }
+    
 }
 
-extension AboutViewController: WKNavigationDelegate {
+extension XSWKWebViewViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.scrollView.xs.header?.endRefreshing()

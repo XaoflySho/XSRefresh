@@ -20,7 +20,7 @@ open class XSRefreshBackStateFooter: XSRefreshBackFooter {
 
     public func setTitle(_ text: String, for state: XSRefresh.State) {
         stateTitles[state] = text
-        stateLabel.text = stateTitles[state]
+        stateLabel.text = stateTitles[self.state]
     }
     
     func title(for state: XSRefresh.State) -> String {

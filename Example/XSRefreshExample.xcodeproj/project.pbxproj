@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1797F1192428975F004B60C3 /* XSExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797F1182428975F004B60C3 /* XSExample.swift */; };
+		1797F11C24289D65004B60C3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797F11A24289D65004B60C3 /* CollectionViewController.swift */; };
+		1797F11D24289D65004B60C3 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797F11B24289D65004B60C3 /* CollectionViewController.xib */; };
+		1797F12224289DA7004B60C3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797F12024289DA7004B60C3 /* TableViewController.swift */; };
+		1797F12324289DA7004B60C3 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797F12124289DA7004B60C3 /* TableViewController.xib */; };
+		1797F1272428A94D004B60C3 /* XSWKWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797F1252428A94D004B60C3 /* XSWKWebViewViewController.swift */; };
+		1797F1282428A94D004B60C3 /* XSWKWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797F1262428A94D004B60C3 /* XSWKWebViewViewController.xib */; };
+		1797F12D2428B40F004B60C3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797F12C2428B40F004B60C3 /* Extension.swift */; };
 		17BA67DF2424BC9500AF6E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA67DE2424BC9500AF6E4B /* AppDelegate.swift */; };
 		17BA67E32424BC9500AF6E4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA67E22424BC9500AF6E4B /* ViewController.swift */; };
 		17BA67E62424BC9500AF6E4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BA67E42424BC9500AF6E4B /* Main.storyboard */; };
 		17BA67E82424BC9900AF6E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BA67E72424BC9900AF6E4B /* Assets.xcassets */; };
 		17BA67EB2424BC9900AF6E4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BA67E92424BC9900AF6E4B /* LaunchScreen.storyboard */; };
-		17BA67F52424C7EA00AF6E4B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA67F42424C7EA00AF6E4B /* TableViewController.swift */; };
 		416679442425CCFD00F17581 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416679432425CCFD00F17581 /* AboutViewController.swift */; };
 		4166796224265C1E00F17581 /* XSChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166796124265C1E00F17581 /* XSChiBaoZiHeader.swift */; };
 		416679682426852200F17581 /* XSChiBaoZiBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416679672426852200F17581 /* XSChiBaoZiBackFooter.swift */; };
@@ -21,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1797F1182428975F004B60C3 /* XSExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExample.swift; sourceTree = "<group>"; };
+		1797F11A24289D65004B60C3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		1797F11B24289D65004B60C3 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		1797F12024289DA7004B60C3 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		1797F12124289DA7004B60C3 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		1797F1252428A94D004B60C3 /* XSWKWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSWKWebViewViewController.swift; sourceTree = "<group>"; };
+		1797F1262428A94D004B60C3 /* XSWKWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSWKWebViewViewController.xib; sourceTree = "<group>"; };
+		1797F12C2428B40F004B60C3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		17BA67DB2424BC9500AF6E4B /* XSRefreshExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XSRefreshExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17BA67DE2424BC9500AF6E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17BA67E22424BC9500AF6E4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +43,6 @@
 		17BA67E72424BC9900AF6E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17BA67EA2424BC9900AF6E4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17BA67EC2424BC9900AF6E4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17BA67F42424C7EA00AF6E4B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		416679432425CCFD00F17581 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		41667957242629F900F17581 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		41667958242629F900F17581 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -54,6 +68,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1797F1172428972A004B60C3 /* DIY */ = {
+			isa = PBXGroup;
+			children = (
+				4166796124265C1E00F17581 /* XSChiBaoZiHeader.swift */,
+				416679672426852200F17581 /* XSChiBaoZiBackFooter.swift */,
+				4166796D24268C4F00F17581 /* XSChiBaoZiAutoFooter.swift */,
+			);
+			path = DIY;
+			sourceTree = "<group>";
+		};
+		1797F12424289DB0004B60C3 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				1797F12024289DA7004B60C3 /* TableViewController.swift */,
+				1797F12124289DA7004B60C3 /* TableViewController.xib */,
+				1797F11A24289D65004B60C3 /* CollectionViewController.swift */,
+				1797F11B24289D65004B60C3 /* CollectionViewController.xib */,
+				1797F1252428A94D004B60C3 /* XSWKWebViewViewController.swift */,
+				1797F1262428A94D004B60C3 /* XSWKWebViewViewController.xib */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		1797F12B2428AF74004B60C3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1797F12C2428B40F004B60C3 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		17BA67D22424BC9500AF6E4B = {
 			isa = PBXGroup;
 			children = (
@@ -76,12 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				17BA67DE2424BC9500AF6E4B /* AppDelegate.swift */,
+				1797F1182428975F004B60C3 /* XSExample.swift */,
 				17BA67E22424BC9500AF6E4B /* ViewController.swift */,
-				4166796124265C1E00F17581 /* XSChiBaoZiHeader.swift */,
-				416679672426852200F17581 /* XSChiBaoZiBackFooter.swift */,
-				4166796D24268C4F00F17581 /* XSChiBaoZiAutoFooter.swift */,
-				17BA67F42424C7EA00AF6E4B /* TableViewController.swift */,
 				416679432425CCFD00F17581 /* AboutViewController.swift */,
+				1797F12424289DB0004B60C3 /* Example */,
+				1797F1172428972A004B60C3 /* DIY */,
+				1797F12B2428AF74004B60C3 /* Extension */,
 				17BA67E42424BC9500AF6E4B /* Main.storyboard */,
 				17BA67E72424BC9900AF6E4B /* Assets.xcassets */,
 				17BA67E92424BC9900AF6E4B /* LaunchScreen.storyboard */,
@@ -169,8 +214,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1797F11D24289D65004B60C3 /* CollectionViewController.xib in Resources */,
+				1797F1282428A94D004B60C3 /* XSWKWebViewViewController.xib in Resources */,
 				17BA67EB2424BC9900AF6E4B /* LaunchScreen.storyboard in Resources */,
 				17BA67E82424BC9900AF6E4B /* Assets.xcassets in Resources */,
+				1797F12324289DA7004B60C3 /* TableViewController.xib in Resources */,
 				17BA67E62424BC9500AF6E4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,12 +272,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1797F11C24289D65004B60C3 /* CollectionViewController.swift in Sources */,
+				1797F1272428A94D004B60C3 /* XSWKWebViewViewController.swift in Sources */,
 				17BA67E32424BC9500AF6E4B /* ViewController.swift in Sources */,
-				17BA67F52424C7EA00AF6E4B /* TableViewController.swift in Sources */,
+				1797F1192428975F004B60C3 /* XSExample.swift in Sources */,
+				1797F12D2428B40F004B60C3 /* Extension.swift in Sources */,
 				416679442425CCFD00F17581 /* AboutViewController.swift in Sources */,
 				4166796E24268C4F00F17581 /* XSChiBaoZiAutoFooter.swift in Sources */,
 				4166796224265C1E00F17581 /* XSChiBaoZiHeader.swift in Sources */,
 				416679682426852200F17581 /* XSChiBaoZiBackFooter.swift in Sources */,
+				1797F12224289DA7004B60C3 /* TableViewController.swift in Sources */,
 				17BA67DF2424BC9500AF6E4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,22 +1,15 @@
 PODS:
-  - XSExtensions (0.0.1)
-  - XSRefresh (0.0.1):
-    - XSExtensions (= 0.0.1)
+  - XSRefresh (0.0.2)
 
 DEPENDENCIES:
   - XSRefresh (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - XSExtensions
 
 EXTERNAL SOURCES:
   XSRefresh:
     :path: "../"
 
 SPEC CHECKSUMS:
-  XSExtensions: e52684895f0f863ed50602a20a14b95b436f5f1b
-  XSRefresh: 2f41dd876dfeab695bac493ac2f79ebc73e76c6e
+  XSRefresh: da61fc3d66d4022bc154b2b7588f54c0b4269c39
 
 PODFILE CHECKSUM: b0577ce5d13f0ed8d5c727609af7760367400d2f
 
