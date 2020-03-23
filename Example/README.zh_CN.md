@@ -23,17 +23,17 @@ XSRefresh的类结构图：
 ### XSRefreshComponent
 
 ```swift
-/* The Base Class of refresh control */
+/* 刷新控件基类 */
 class XSRefreshComponent: UIView {
-  /* Control the state of Refresh */
-  /* BeginRefreshing */
+  /* 控制刷新状态 */
+  /* 开始刷新 */
   func beginRefreshing(withCompletion block: (() -> Void)? = nil) {}
-  /* EndRefreshing */
+  /* 结束刷新 */
   func endRefreshing(withCompletion block: (() -> Void)? = nil) {}
-  /* IsRefreshing */
+  /* 是否在刷新中 */
   var refreshing: Bool
   
-  /* According to the drag ratio to change alpha automatically */
+  /* 根据距离阻力自动改变透明度 */
   var automaticallyChangeAlpha: Bool
 } 
 ```
@@ -42,20 +42,20 @@ class XSRefreshComponent: UIView {
 
 ```swift
 class XSRefreshHeader: XSRefreshComponent {
-  /* Creat header */
+  /* 创建 Header */
   class func header(WithRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshHeader {}
   convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {}
   
-  /* Creat header */
+  /* 创建 header */
   class func header(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshHeader {}
   convenience init(withRefreshing target: NSObject?, action: Selector?) {}
   
-  /* This key is used to storage the time that the last time of drown-down successfully */
+  /* 该Key用于存储最后一次下拉刷新的时间 */
   var lastUpdatedTimeKey: String
-  /* The last time of drown-down successfully */
+  /* 最后一次下拉刷新的时间 */
   var lastUpdatedTime: Date
   
-  /* Ignored scrollView contentInset top */
+  /* 忽略滚动视图的内容的顶部距离 */
   var ignoredScrollViewContentInsetTop: CGFloat
 }
 ```
@@ -64,20 +64,20 @@ class XSRefreshHeader: XSRefreshComponent {
 
 ```swift
 class XSRefreshFooter: XSRefreshComponent {
-  /* Creat footer */
+  /* 创建 footer */
   class func footer(withRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshFooter {}
   convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {}
   
-  /* Creat footer */
+  /* 创建 footer */
   class func footer(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshFooter {}
   convenience init(withRefreshing target: NSObject?, action: Selector?) {}
   
-  /* NoticeNoMoreData */
+  /* 结束加载且没有更多数据了 */
   func endRefreshingWithNoMoreData(completion block: (() -> Void)? = nil) {}
-  /* ResetNoMoreData (Clear the status of NoMoreData) */
+  /* 重置没有更多数据状态（重设noMoreData状态） */
   func resetNoMoreData() {}
   
-  /* Ignored scrollView contentInset bottom */
+  /* 忽略滚动视图的内容的底部距离 */
   var ignoredScrollViewContentInsetBottom: CGFloat
 }
 ```
@@ -86,10 +86,11 @@ class XSRefreshFooter: XSRefreshComponent {
 
 ```swift
 class XSRefreshAutoFooter: XSRefreshFooter {
-  /* Is Automatically Refresh(Default is True) */
+  /* 是否自动刷新（默认自动刷新） */
   var automaticallyRefresh: Bool = true
   
-  /* When there is much at the bottom of the control is automatically refresh(Default is 1.0，Is at the bottom of the control appears in full, will refresh automatically) */
+  /* 当控件底部有多少内容时自动刷新（默认为1.0，在控件底部出现完整时，自动刷新） */
   var triggerAutomaticallyRefreshPercent: CGFloat = 1.0
 }
 ```
+
