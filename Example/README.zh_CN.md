@@ -94,3 +94,19 @@ class XSRefreshAutoFooter: XSRefreshFooter {
 }
 ```
 
+#  示例
+
+- 下载源代码，或使用Git克隆：
+
+```
+git clone https://github.com/XaoflySho/XSRefresh.git
+```
+
+- 在终端中定位到`Example`目录；
+
+- 运行`pod install`；
+
+- 打开`XSRefreshExample.xcworkspace`。
+
+## Reference
+

@@ -93,3 +93,18 @@ class XSRefreshAutoFooter: XSRefreshFooter {
   var triggerAutomaticallyRefreshPercent: CGFloat = 1.0
 }
 ```
+
+# Example
+
+- Download the source code, or use Git to clone:
+
+```
+git clone https://github.com/XaoflySho/XSRefresh.git
+```
+
+- Navigate to the `Example` folder in the Terminal;
+- Run `pod install`;
+- Open `XSRefreshExample.xcworkspace`.
+
+## Reference
+
