@@ -121,6 +121,8 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let example = examples[indexPath.section]
         let viewController = example.viewControllerClass.init()
         viewController.title = example.titles[indexPath.row]

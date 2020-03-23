@@ -221,7 +221,7 @@ extension TableViewController {
         
         let footer = XSChiBaoZiAutoFooter(withRefreshing: self, action: #selector(loadMoreData))
         // 隐藏状态
-        footer.stateLabel.isHidden = true
+        footer.refreshingTitleHidden = true
         // 设置 Footer
         tableView.xs.footer = footer
     }
