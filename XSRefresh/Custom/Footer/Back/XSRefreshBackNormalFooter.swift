@@ -55,7 +55,7 @@ open class XSRefreshBackNormalFooter: XSRefreshBackStateFooter {
         didSet {
             if state == .idle {
                 if oldValue == .refreshing {
-                    arrowView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+                    arrowView.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
                     
                     UIView.animate(withDuration: XSRefreshConst.slowAnimationDuration, animations: {
                         self.loadingView.alpha = 0.0
@@ -73,7 +73,7 @@ open class XSRefreshBackNormalFooter: XSRefreshBackStateFooter {
                     loadingView.stopAnimating()
                     
                     UIView.animate(withDuration: XSRefreshConst.fastAnimationDuration) {
-                        self.arrowView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+                        self.arrowView.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
                     }
                 }
             } else if state == .pulling {
