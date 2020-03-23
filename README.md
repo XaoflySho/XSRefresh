@@ -31,7 +31,7 @@ import XSRefresh
 
 func tableViewRefreshSetting() {
   // Header, the drop-down refresh control.
-	tableView.xs.header = XSRefreshNormalHeader {
+  tableView.xs.header = XSRefreshNormalHeader {
     // Refreshing code...
 	  
     // End refreshing.
