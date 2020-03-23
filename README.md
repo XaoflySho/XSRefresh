@@ -31,19 +31,19 @@ import XSRefresh
 
 func tableViewRefreshSetting() {
   // Header, the drop-down refresh control.
-  tableView.xs.header = XSRefreshNormalHeader {
+  tableView.xs.header = XSRefreshNormalHeader { [weak self] in
     // Refreshing code...
 	  
     // End refreshing.
-    tableView.xs.header?.endRefreshing()
+    self?.tableView.xs.header?.endRefreshing()
   }
 	
   // Footer, the pull to refresh control.
-  tableView.xs.footer = XSRefreshAutoNormalFooter {
+  tableView.xs.footer = XSRefreshAutoNormalFooter { [weak self] in
     // Load or refreshing Code...
     
     // End refreshing.
-    tableView.xs.footer?.endRefreshing()
+    self?.tableView.xs.footer?.endRefreshing()
   }
 }
 ```
