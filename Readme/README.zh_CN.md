@@ -83,7 +83,7 @@ func tableViewRefreshSetting() {
 
 ## 示例说明
 
-要了解如何应用该规范，请参见[example-readmes](../XSRefresh.md)。
+要了解如何应用该规范，请参见[example-readmes](Example/README.zh_CN.md)。
 
 ## 维护
 

@@ -1,10 +1,10 @@
 # XSRefresh
 
-
+[English](README.md)|[简体中文](README.zh_CN.md)
 
 The Class Structure Chart of XSRefresh:
 
-![Mindmap](Images/Mindmap.png)s
+![Mindmap](../Images/Mindmap.png)
 
 - `The class of red text` in the chart：You can use them directly
     - The drop-down refresh control types

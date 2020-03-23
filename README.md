@@ -83,7 +83,7 @@ func tableViewRefreshSetting() {
 
 ## Example Readmes
 
-To see how the specification has been applied, see the [example-readmes](../Example/README.md).
+To see how the specification has been applied, see the [example-readmes](Example/README.md).
 
 ## Maintainers
 
