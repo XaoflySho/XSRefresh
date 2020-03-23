@@ -14,10 +14,10 @@ open class XSRefreshComponent: UIView {
     var refreshingBlock: XSRefreshComponentAction?
     
     /// 回调对象
-    var refreshingTarget: NSObject?
+    private weak var refreshingTarget: NSObject?
     
     /// 回调方法
-    var refreshingAction: Selector?
+    private var refreshingAction: Selector?
     
     // MARK: - 刷新状态控制
     /// 进入刷新后的回调
