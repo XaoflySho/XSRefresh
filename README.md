@@ -1,8 +1,6 @@
 English|[简体中文](Readme/README.zh_CN.md)
 
-# XSRefresh
-
-![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)
+# XSRefresh [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](./LICENSE) [![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)](https://cocoapods.org)
 
 An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.com/CoderMJLee/MJRefresh).
 
