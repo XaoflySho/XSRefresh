@@ -277,6 +277,8 @@ extension TableViewController {
         
         footer.ignoredScrollViewContentInsetBottom = 30
         
+        footer.automaticallyChangeAlpha = true
+        
         tableView.xs.footer = footer
         
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
