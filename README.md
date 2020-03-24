@@ -85,6 +85,16 @@ func tableViewRefreshSetting() {
 
 To see how the specification has been applied, see the [example-readmes](Example/README.md).
 
+## TODO List
+
+ ☐ Support for Carthage management tools
+
+ ☐ Support for Swift package management tools
+
+ ☐ Support horizontal scroll control, eg.CollectionView
+
+ ☐ ......
+
 ## Maintainers
 
 [@XaoflySho](https://github.com/XaoflySho).

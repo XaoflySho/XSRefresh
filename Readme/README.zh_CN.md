@@ -85,6 +85,16 @@ func tableViewRefreshSetting() {
 
 要了解如何应用该规范，请参见[example-readmes](../Example/README.zh_CN.md)。
 
+## 待办事项
+
+ ☐ 支持 Carthage 管理工具
+
+ ☐ 支持 Swift 包管理工具
+
+ ☐ 支持横向滚动的控件，例如Collection View
+
+ ☐ ......
+
 ## 维护
 
 [@XaoflySho](https://github.com/XaoflySho).
