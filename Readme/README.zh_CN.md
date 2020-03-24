@@ -27,6 +27,14 @@
 pod 'XSRefresh'
 ```
 
+### Carthage
+
+Carthage是一个分散的依赖性管理器，可构建您的依赖性并为您提供二进制框架。 要使用Carthage将XSRefresh集成到Xcode项目中，请在Cartfile中指定：
+
+```
+github "XaoflySho/XSRefresh"
+```
+
 ### 手动导入
 
 拖动 `XSRefresh/Sources` 文件夹及其中所有文件到项目中。
@@ -96,13 +104,13 @@ func tableViewRefreshSetting() {
 
 ## 待办事项
 
- ☐ 支持 Carthage 管理工具
+- [x] 支持 Carthage 管理工具
 
- ☐ 支持 Swift 包管理工具
+- [ ] ~~支持 Swift Package Manager 管理工具~~
 
- ☐ 支持横向滚动的控件，例如Collection View
+- [ ] 支持横向滚动的控件，例如Collection View
 
- ☐ ......
+- [ ] ......
 
 ## 维护
 
