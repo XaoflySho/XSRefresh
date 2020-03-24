@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17E157042429D9DF007F9952"
-               BuildableName = "XSRefreshExample.app"
-               BlueprintName = "Example"
+               BlueprintIdentifier = "17E153642429AFBE007F9952"
+               BuildableName = "XSRefresh.framework"
+               BlueprintName = "XSRefresh"
                ReferencedContainer = "container:XSRefresh.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17E157042429D9DF007F9952"
-            BuildableName = "XSRefreshExample.app"
-            BlueprintName = "Example"
-            ReferencedContainer = "container:XSRefresh.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "17E157042429D9DF007F9952"
-            BuildableName = "XSRefreshExample.app"
-            BlueprintName = "Example"
+            BlueprintIdentifier = "17E153642429AFBE007F9952"
+            BuildableName = "XSRefresh.framework"
+            BlueprintName = "XSRefresh"
             ReferencedContainer = "container:XSRefresh.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
