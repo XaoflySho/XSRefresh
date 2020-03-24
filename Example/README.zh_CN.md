@@ -1,6 +1,6 @@
 # XSRefresh
 
-[English](README.md)|[简体中文](README.zh_CN.md)
+[English](README.md)|简体中文
 
 XSRefresh的类结构图：
 

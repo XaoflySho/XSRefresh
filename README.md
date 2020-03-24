@@ -2,7 +2,7 @@
 
 ![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)
 
-[English](README.md)|[简体中文](Readme/README.zh_CN.md)
+English|[简体中文](Readme/README.zh_CN.md)
 
 An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.com/CoderMJLee/MJRefresh).
 

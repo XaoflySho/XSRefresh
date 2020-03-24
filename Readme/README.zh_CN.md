@@ -2,7 +2,7 @@
 
 ![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)
 
-[English](../README.md)|[简体中文](README.zh_CN.md)
+[English](../README.md)|简体中文
 
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
