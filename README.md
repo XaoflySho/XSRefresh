@@ -91,5 +91,5 @@ To see how the specification has been applied, see the [example-readmes](Example
 
 ## License
 
-[MIT](https://github.com/RichardLitt/standard-readme/blob/master/LICENSE) © Xaofly Sho
+[MIT](./LICENSE) © Xaofly Sho
 

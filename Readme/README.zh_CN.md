@@ -91,5 +91,5 @@ func tableViewRefreshSetting() {
 
 ## 许可证
 
-[MIT](https://github.com/RichardLitt/standard-readme/blob/master/LICENSE) © Xaofly Sho
+[MIT](../LICENSE) © Xaofly Sho
 
