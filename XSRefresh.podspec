@@ -19,9 +19,10 @@ Pod::Spec.new do |spec|
   spec.source        = { :git => "https://github.com/XaoflySho/XSRefresh.git", :tag => "#{spec.version}" }
   spec.swift_version = '5.0'
 
+  spec.platform      = :ios
   spec.ios.deployment_target  = '9.0'
-  
-  spec.source_files  = "XSRefresh/**/*.swift"
-  spec.resource      = "XSRefresh/**/*.bundle"
+
+  spec.source_files  = "Sources/**/*.{swift}"
+  spec.resource      = "Sources/**/*.bundle"
   
 end
