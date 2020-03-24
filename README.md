@@ -4,7 +4,7 @@ English|[简体中文](Readme/README.zh_CN.md)
 
 An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.com/CoderMJLee/MJRefresh).
 
-**[Release notes](https://github.com/XaoflySho/XSRefresh/releases)**
+**[Release notes](RELEASE/RELEASE.md)**
 
 - [Install](#install)
   - [CocoaPods](#cocoapods)

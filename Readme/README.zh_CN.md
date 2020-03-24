@@ -4,7 +4,7 @@
 
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
-**[Release notes](https://github.com/XaoflySho/XSRefresh/releases)**
+**[Release notes](../RELEASE/RELEASE.md)**
 
 - [安装](#安装)
   - [CocoaPods](#cocoapods)
@@ -29,7 +29,7 @@ pod 'XSRefresh'
 
 ### Carthage
 
-Carthage是一个分散的依赖性管理器，可构建您的依赖性并为您提供二进制框架。 要使用Carthage将XSRefresh集成到Xcode项目中，请在Cartfile中指定：
+[Carthage](https://github.com/Carthage/Carthage) 是一个分散的依赖性管理器，可构建您的依赖性并为您提供二进制框架。 要使用 Carthage 将 XSRefresh 集成到 Xcode 项目中，请在 `Cartfile` 中指定：
 
 ```
 github "XaoflySho/XSRefresh"
