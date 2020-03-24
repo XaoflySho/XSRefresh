@@ -27,6 +27,14 @@ An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.
 pod 'XSRefresh'
 ```
 
+###  Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate XSRefresh into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```
+github "XaoflySho/XSRefresh"
+```
+
 ### Manual
 
 Drag All files in the `XSRefresh/Sources` folder to project.
@@ -96,13 +104,13 @@ To see how the specification has been applied, see the [example-readmes](Readme/
 
 ## TODO List
 
- ☐ Support for Carthage management tools
+- [x] Support for Carthage management tools
 
- ☐ Support for Swift package management tools
+- [ ] ~~Support for Swift package management tools~~
 
- ☐ Support horizontal scroll control, eg.CollectionView
+- [ ] Support horizontal scroll control, eg.CollectionView
 
- ☐ ......
+- [ ] ......
 
 ## Maintainers
 
