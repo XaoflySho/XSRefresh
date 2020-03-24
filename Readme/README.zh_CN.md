@@ -1,12 +1,23 @@
+[English](../README.md)|简体中文
+
 # XSRefresh
 
 ![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)
 
-[English](../README.md)|简体中文
-
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
 **[Release notes](https://github.com/XaoflySho/XSRefresh/releases)**
+
+- [安装](#安装)
+  - [CocoaPods](#cocoapods)
+  - [手动导入](#手动导入)
+- [使用](#使用)
+  - [快速开始](#快速开始)
+  - [更多](#更多)
+- [示例说明](#示例说明)
+- [待办事项](#待办事项)
+- [维护](#维护)
+- [许可证](#许可证)
 
 ## 安装
 
