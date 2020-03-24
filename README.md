@@ -8,7 +8,7 @@ An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.
 
 - [Install](#install)
   - [CocoaPods](#cocoapods)
-  - [Manual import](#manual-import)
+  - [Manual](#manual)
 - [Usage](#usage)
   - [Quick start](#quick-start)
   - [More](#more)
@@ -27,9 +27,9 @@ An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.
 pod 'XSRefresh'
 ```
 
-### Manual import
+### Manual
 
-Drag All files in the `XSRefresh` folder to project.
+Drag All files in the `XSRefresh/Sources` folder to project.
 
 ## Usage
 
@@ -92,7 +92,7 @@ func tableViewRefreshSetting() {
 
 ## Example Readmes
 
-To see how the specification has been applied, see the [example-readmes](Example/README.md).
+To see how the specification has been applied, see the [example-readmes](Readme/EXAMPLE-README.md).
 
 ## TODO List
 

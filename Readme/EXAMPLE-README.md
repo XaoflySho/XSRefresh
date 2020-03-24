@@ -102,9 +102,7 @@ class XSRefreshAutoFooter: XSRefreshFooter {
 git clone https://github.com/XaoflySho/XSRefresh.git
 ```
 
-- Navigate to the `Example` folder in the Terminal;
-- Run `pod install`;
-- Open `XSRefreshExample.xcworkspace`.
-
-## Reference
+- Open `XSRefresh.xcodeproj`;
+- Select `XSRefreshExample` scheme;
+- Run project.
 

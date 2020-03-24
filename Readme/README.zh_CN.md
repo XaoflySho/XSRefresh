@@ -29,7 +29,7 @@ pod 'XSRefresh'
 
 ### 手动导入
 
-拖动 XSRefresh 文件夹中的所有文件到项目中。
+拖动 `XSRefresh/Sources` 文件夹及其中所有文件到项目中。
 
 ## 使用
 
@@ -92,7 +92,7 @@ func tableViewRefreshSetting() {
 
 ## 示例说明
 
-要了解如何应用该规范，请参见[example-readmes](../Example/README.zh_CN.md)。
+要了解如何应用该规范，请参见[example-readmes](EXAMPLE-README.zh_CN.md)。
 
 ## 待办事项
 
