@@ -1,5 +1,13 @@
 [English](./RELEASE.md)|简体中文
 
+## [XSRefresh 0.0.4 - Minor Release [2020.03.24]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.4)
+
+### Notes
+
+- 支持Carthage。
+
+
+
 ## [XSRefresh 0.0.3 - Minor Release [2020.03.24]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.3)
 
 ### Notes

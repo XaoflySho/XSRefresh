@@ -1,10 +1,18 @@
 English|[简体中文](./RELEASE.zh_CN.md)
 
+## [XSRefresh 0.0.4 - Minor Release [2020.03.24]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.4)
+
+### Notes
+
+- Support Carthage.
+
+
+
 ## [XSRefresh 0.0.3 - Minor Release [2020.03.24]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.3)
 
 ### Notes
 
-- Fixed a bug
+- Fixed a bug.
 
 ### Bug Fixes
 
