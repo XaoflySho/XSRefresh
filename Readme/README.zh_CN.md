@@ -1,6 +1,6 @@
 [English](../README.md)|简体中文
 
-# XSRefresh [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](./LICENSE) [![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)](https://cocoapods.org)
+# XSRefresh [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](./LICENSE) [![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg?style=flat)](https://cocoapods.org/pods/XSRefresh) [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D?style=flat)](https://github.com/Carthage/Carthage)
 
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
