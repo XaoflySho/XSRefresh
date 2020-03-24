@@ -1,12 +1,21 @@
-# XSRefresh
+English|[简体中文](Readme/README.zh_CN.md)
 
-![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)
-
-[English](README.md)|[简体中文](Readme/README.zh_CN.md)
+# XSRefresh [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](./LICENSE) [![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)](https://cocoapods.org)
 
 An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.com/CoderMJLee/MJRefresh).
 
 **[Release notes](https://github.com/XaoflySho/XSRefresh/releases)**
+
+- [Install](#install)
+  - [CocoaPods](#cocoapods)
+  - [Manual](#manual)
+- [Usage](#usage)
+  - [Quick start](#quick-start)
+  - [More](#more)
+- [Example Readmes](#example-readmes)
+- [TODO List](#todo-list)
+- [Maintainers](#maintainers)
+- [License](#license)
 
 ## Install
 
@@ -18,9 +27,9 @@ An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.
 pod 'XSRefresh'
 ```
 
-### Manual import
+### Manual
 
-Drag All files in the `XSRefresh` folder to project.
+Drag All files in the `XSRefresh/Sources` folder to project.
 
 ## Usage
 
@@ -83,7 +92,17 @@ func tableViewRefreshSetting() {
 
 ## Example Readmes
 
-To see how the specification has been applied, see the [example-readmes](Example/README.md).
+To see how the specification has been applied, see the [example-readmes](Readme/EXAMPLE-README.md).
+
+## TODO List
+
+ ☐ Support for Carthage management tools
+
+ ☐ Support for Swift package management tools
+
+ ☐ Support horizontal scroll control, eg.CollectionView
+
+ ☐ ......
 
 ## Maintainers
 
@@ -91,5 +110,5 @@ To see how the specification has been applied, see the [example-readmes](Example
 
 ## License
 
-[MIT](https://github.com/RichardLitt/standard-readme/blob/master/LICENSE) © Xaofly Sho
+[MIT](./LICENSE) © Xaofly Sho
 

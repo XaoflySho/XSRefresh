@@ -11,6 +11,7 @@ open class XSRefreshBackNormalFooter: XSRefreshBackStateFooter {
     
     private(set) lazy var arrowView: UIImageView = {
         let imageView = UIImageView(image: UIImage.loadImage(named: "arrow"))
+        imageView.transform = .init(rotationAngle: CGFloat.pi)
         return imageView
     }()
     

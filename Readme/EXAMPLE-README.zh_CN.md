@@ -1,6 +1,6 @@
 # XSRefresh
 
-[English](README.md)|[简体中文](README.zh_CN.md)
+[English](README.md)|简体中文
 
 XSRefresh的类结构图：
 
@@ -96,17 +96,13 @@ class XSRefreshAutoFooter: XSRefreshFooter {
 
 #  示例
 
-- 下载源代码，或使用Git克隆：
+- 下载源代码，或使用 Git 克隆：
 
 ```
 git clone https://github.com/XaoflySho/XSRefresh.git
 ```
 
-- 在终端中定位到`Example`目录；
-
-- 运行`pod install`；
-
-- 打开`XSRefreshExample.xcworkspace`。
-
-## Reference
+- 打开 `XSRefresh.xcodeproj` ；
+- 选择 `XSRefreshExample` 方案；
+- 运行项目。
 

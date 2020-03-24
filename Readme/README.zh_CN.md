@@ -1,12 +1,21 @@
-# XSRefresh
+[English](../README.md)|简体中文
 
-![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)
-
-[English](../README.md)|[简体中文](README.zh_CN.md)
+# XSRefresh [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](./LICENSE) [![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg)](https://cocoapods.org)
 
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
 **[Release notes](https://github.com/XaoflySho/XSRefresh/releases)**
+
+- [安装](#安装)
+  - [CocoaPods](#cocoapods)
+  - [手动导入](#手动导入)
+- [使用](#使用)
+  - [快速开始](#快速开始)
+  - [更多](#更多)
+- [示例说明](#示例说明)
+- [待办事项](#待办事项)
+- [维护](#维护)
+- [许可证](#许可证)
 
 ## 安装
 
@@ -20,7 +29,7 @@ pod 'XSRefresh'
 
 ### 手动导入
 
-拖动 XSRefresh 文件夹中的所有文件到项目中。
+拖动 `XSRefresh/Sources` 文件夹及其中所有文件到项目中。
 
 ## 使用
 
@@ -83,7 +92,17 @@ func tableViewRefreshSetting() {
 
 ## 示例说明
 
-要了解如何应用该规范，请参见[example-readmes](../Example/README.zh_CN.md)。
+要了解如何应用该规范，请参见[example-readmes](EXAMPLE-README.zh_CN.md)。
+
+## 待办事项
+
+ ☐ 支持 Carthage 管理工具
+
+ ☐ 支持 Swift 包管理工具
+
+ ☐ 支持横向滚动的控件，例如Collection View
+
+ ☐ ......
 
 ## 维护
 
@@ -91,5 +110,5 @@ func tableViewRefreshSetting() {
 
 ## 许可证
 
-[MIT](https://github.com/RichardLitt/standard-readme/blob/master/LICENSE) © Xaofly Sho
+[MIT](../LICENSE) © Xaofly Sho
 
