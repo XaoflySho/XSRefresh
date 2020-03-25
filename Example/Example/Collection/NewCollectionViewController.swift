@@ -30,6 +30,16 @@ class NewCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         collectionView.register(UINib(nibName: "\(NewCollectionViewCell.self)", bundle: .main), forCellWithReuseIdentifier: reuseIdentifier)
+        
+        collectionView.xs.leader = XSRefreshStateLeader { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                self?.collectionView.xs.leader?.endRefreshing()
+            }
+        }
+        
+        collectionView.xs.trailer = XSRefreshTrailer {
+            
+        }
     }
 
 }

@@ -16,6 +16,7 @@
 		17BE52E4242B433100371D8D /* NewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BE52E2242B433100371D8D /* NewCollectionViewCell.xib */; };
 		17BE52E9242B4BC800371D8D /* XSRefreshLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52E8242B4BC800371D8D /* XSRefreshLeader.swift */; };
 		17BE52EB242B52D900371D8D /* XSRefreshTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52EA242B52D900371D8D /* XSRefreshTrailer.swift */; };
+		17BE52EE242B641100371D8D /* XSRefreshStateLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52ED242B641100371D8D /* XSRefreshStateLeader.swift */; };
 		17E1536A2429AFBE007F9952 /* XSRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 17E153682429AFBE007F9952 /* XSRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17E156AF2429D679007F9952 /* XSRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E156942429D679007F9952 /* XSRefreshBackGifFooter.swift */; };
 		17E156B02429D679007F9952 /* XSRefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E156952429D679007F9952 /* XSRefreshBackNormalFooter.swift */; };
@@ -93,6 +94,7 @@
 		17BE52E2242B433100371D8D /* NewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCollectionViewCell.xib; sourceTree = "<group>"; };
 		17BE52E8242B4BC800371D8D /* XSRefreshLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshLeader.swift; sourceTree = "<group>"; };
 		17BE52EA242B52D900371D8D /* XSRefreshTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshTrailer.swift; sourceTree = "<group>"; };
+		17BE52ED242B641100371D8D /* XSRefreshStateLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshStateLeader.swift; sourceTree = "<group>"; };
 		17E153652429AFBE007F9952 /* XSRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XSRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E153682429AFBE007F9952 /* XSRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSRefresh.h; sourceTree = "<group>"; };
 		17E153692429AFBE007F9952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +198,14 @@
 			path = Trailer;
 			sourceTree = "<group>";
 		};
+		17BE52EC242B63E500371D8D /* Leader */ = {
+			isa = PBXGroup;
+			children = (
+				17BE52ED242B641100371D8D /* XSRefreshStateLeader.swift */,
+			);
+			path = Leader;
+			sourceTree = "<group>";
+		};
 		17E1535B2429AFBE007F9952 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +245,7 @@
 			children = (
 				17E1569B2429D679007F9952 /* Header */,
 				17E156922429D679007F9952 /* Footer */,
+				17BE52EC242B63E500371D8D /* Leader */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -518,6 +529,7 @@
 				17E156B42429D679007F9952 /* XSRefreshAutoGifFooter.swift in Sources */,
 				17E156C12429D679007F9952 /* XSRefresh.swift in Sources */,
 				17E156BE2429D679007F9952 /* UIScrollViewRefresh.swift in Sources */,
+				17BE52EE242B641100371D8D /* XSRefreshStateLeader.swift in Sources */,
 				17E156BC2429D679007F9952 /* XSRefreshHeader.swift in Sources */,
 				17E156C22429D679007F9952 /* XSRefreshConst.swift in Sources */,
 				17E156B02429D679007F9952 /* XSRefreshBackNormalFooter.swift in Sources */,
