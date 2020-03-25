@@ -43,7 +43,7 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
         super.prepare()
     }
     
-    override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+    open override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentSizeDidChange(change)
         guard let scrollView = scrollView else {
             return
@@ -51,7 +51,7 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
         xs.y = scrollView.xs.contentHeight + ignoredScrollViewContentInsetBottom
     }
     
-    override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+    open override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentOffsetDidChange(change)
         guard let scrollView = scrollView, let change = change else {
             return
@@ -78,7 +78,7 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
         }
     }
     
-    override func scrollViewPanStateDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+    open override func scrollViewPanStateDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewPanStateDidChange(change)
         
         guard state == .idle, let scrollView = scrollView else {

@@ -9,6 +9,8 @@
 import UIKit
 import XSRefresh
 
+private let reuseIdentifier = "Cell"
+
 class TableViewController: UITableViewController {
     
     lazy var dataSource: [String] = {
@@ -22,7 +24,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
 
@@ -41,7 +43,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
 
         cell.textLabel?.text = dataSource[indexPath.row]
 
@@ -199,7 +201,9 @@ extension TableViewController {
     
     @objc func example06() {
         
-        // TODO: 自定义控件
+        tableView.xs.header = XSExampleCustomHeader(withRefreshing: self, action: #selector(refresh))
+        
+        tableView.xs.header?.beginRefreshing()
     }
     
     @objc func example11() {
@@ -297,12 +301,20 @@ extension TableViewController {
     @objc func example20() {
         self.example01()
 
-        // TODO: 自定义 Auto Footer
+        let footer = XSExampleCustomAutoFooter(withRefreshing: self, action: #selector(loadMoreData))
+        // 设置 Footer
+        tableView.xs.footer = footer
     }
     
     @objc func example21() {
         self.example01()
 
-        // TODO: 自定义 Back Footer
+        let footer = XSExampleCustomBackFooter(withRefreshing: self, action: #selector(loadMoreDataWithNoMore))
+        
+        footer.automaticallyChangeAlpha = true
+        // 设置 Footer
+        tableView.xs.footer = footer
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "重置", style: .plain, target: self, action: #selector(resetNoMoreData))
     }
 }
