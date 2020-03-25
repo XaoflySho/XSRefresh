@@ -52,7 +52,7 @@ open class XSRefreshTrailer: XSRefreshComponent {
         }
         
         self.xs.height = scrollView.xs.height
-        self.xs.y     = scrollView.xs.insetTop
+        self.xs.y      = scrollView.xs.insetTop
         
         /// 打开水平方向弹簧效果
         scrollView.alwaysBounceHorizontal = true
@@ -63,7 +63,8 @@ open class XSRefreshTrailer: XSRefreshComponent {
     
     open override func prepare() {
         super.prepare()
+        autoresizingMask = .flexibleHeight
         
-        xs.width = 44
+        xs.width = XSRefreshConst.trailerWidth
     }
 }

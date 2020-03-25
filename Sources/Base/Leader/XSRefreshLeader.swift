@@ -75,6 +75,10 @@ open class XSRefreshLeader: XSRefreshComponent {
         super.placeSubviews()
         
         xs.x = -xs.width
+        
+        if let scrollView = scrollView {
+            xs.height = scrollView.xs.contentHeight
+        }
     }
     
     open override var state: XSRefresh.State {
