@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17BE52D7242B2EEE00371D8D /* XSExampleCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52D6242B2EEE00371D8D /* XSExampleCustomHeader.swift */; };
+		17BE52D9242B34F700371D8D /* XSExampleCustomAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52D8242B34F700371D8D /* XSExampleCustomAutoFooter.swift */; };
+		17BE52DB242B351A00371D8D /* XSExampleCustomBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52DA242B351A00371D8D /* XSExampleCustomBackFooter.swift */; };
 		17E1536A2429AFBE007F9952 /* XSRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 17E153682429AFBE007F9952 /* XSRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17E156AF2429D679007F9952 /* XSRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E156942429D679007F9952 /* XSRefreshBackGifFooter.swift */; };
 		17E156B02429D679007F9952 /* XSRefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E156952429D679007F9952 /* XSRefreshBackNormalFooter.swift */; };
@@ -77,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		17BE52D6242B2EEE00371D8D /* XSExampleCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomHeader.swift; sourceTree = "<group>"; };
+		17BE52D8242B34F700371D8D /* XSExampleCustomAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomAutoFooter.swift; sourceTree = "<group>"; };
+		17BE52DA242B351A00371D8D /* XSExampleCustomBackFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomBackFooter.swift; sourceTree = "<group>"; };
 		17E153652429AFBE007F9952 /* XSRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XSRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E153682429AFBE007F9952 /* XSRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSRefresh.h; sourceTree = "<group>"; };
 		17E153692429AFBE007F9952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,6 +302,8 @@
 				17E157212429DA8F007F9952 /* XSChiBaoZiAutoFooter.swift */,
 				17E157222429DA8F007F9952 /* XSChiBaoZiBackFooter.swift */,
 				17BE52D6242B2EEE00371D8D /* XSExampleCustomHeader.swift */,
+				17BE52D8242B34F700371D8D /* XSExampleCustomAutoFooter.swift */,
+				17BE52DA242B351A00371D8D /* XSExampleCustomBackFooter.swift */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -482,6 +488,8 @@
 				17BE52D7242B2EEE00371D8D /* XSExampleCustomHeader.swift in Sources */,
 				17E157352429DA8F007F9952 /* TableViewController.swift in Sources */,
 				17E157332429DA8F007F9952 /* XSWKWebViewViewController.swift in Sources */,
+				17BE52DB242B351A00371D8D /* XSExampleCustomBackFooter.swift in Sources */,
+				17BE52D9242B34F700371D8D /* XSExampleCustomAutoFooter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
