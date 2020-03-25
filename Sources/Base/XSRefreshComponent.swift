@@ -76,13 +76,13 @@ open class XSRefreshComponent: UIView {
     private var pan: UIPanGestureRecognizer?
     
     // MARK: - 初始化
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         prepare()
     }
     
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         prepare()
