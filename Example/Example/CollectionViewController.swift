@@ -7,87 +7,123 @@
 //
 
 import UIKit
+import XSRefresh
 
 private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
     
+    lazy var dataSource: [UIColor] = {
+        var array: [UIColor] = []
+        for _ in 0 ..< 10 {
+            array.append(self.randomColor())
+        }
+        
+        return array
+    }()
+    
+    init() {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 80, height: 80)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 20
+        
+        super.init(collectionViewLayout: layout)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        self.collectionView.backgroundColor = UIColor.white
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.alwaysBounceVertical = true
+        
+        print("\(methodString)")
+        
+        let selector: Selector = NSSelectorFromString(methodString)
+        if self.responds(to: selector) {
+            self.perform(selector)
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return dataSource.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        cell.backgroundColor = dataSource[indexPath.row]
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
     
     deinit {
         print("Deinit")
     }
     
 }
+
+extension CollectionViewController {
+    
+    func randomColor() -> UIColor {
+        let r = CGFloat.random(in: 0 ..< 255)
+        let g = CGFloat.random(in: 0 ..< 255)
+        let b = CGFloat.random(in: 0 ..< 255)
+        
+        let color = UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1)
+        
+        return color
+    }
+    
+}
+
+extension CollectionViewController {
+    
+    @objc func example21() {
+        collectionView.xs.header = XSRefreshNormalHeader { [weak self] in
+            guard let self = self else { return }
+            /// 模拟处理数据
+            var array: [UIColor] = []
+            for _ in 0 ..< 5 {
+                array.append(self.randomColor())
+            }
+            
+            self.dataSource = array + self.dataSource
+            
+            /// 模拟延迟加载数据，1秒后完成
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.collectionView.reloadData()
+                
+                self?.collectionView.xs.header?.endRefreshing()
+            }
+        }
+        
+        collectionView.xs.header?.beginRefreshing()
+        
+        collectionView.xs.footer = XSRefreshBackNormalFooter { [weak self] in
+            guard let self = self else { return }
+            /// 模拟处理数据
+            for _ in 0 ..< 5 {
+                self.dataSource.append(self.randomColor())
+            }
+            
+            /// 模拟延迟加载数据，1秒后完成
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.collectionView.reloadData()
+                
+                self?.collectionView.xs.footer?.endRefreshing()
+            }
+        }
+        
+        collectionView.xs.footer?.automaticallyChangeAlpha = true
+    }
+    
+}
+

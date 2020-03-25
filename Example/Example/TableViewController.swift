@@ -9,6 +9,8 @@
 import UIKit
 import XSRefresh
 
+private let reuseIdentifier = "Cell"
+
 class TableViewController: UITableViewController {
     
     lazy var dataSource: [String] = {
@@ -22,7 +24,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
 
@@ -41,7 +43,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
 
         cell.textLabel?.text = dataSource[indexPath.row]
 
