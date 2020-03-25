@@ -201,7 +201,9 @@ extension TableViewController {
     
     @objc func example06() {
         
-        // TODO: 自定义控件
+        tableView.xs.header = XSExampleCustomHeader(withRefreshing: self, action: #selector(refresh))
+        
+        tableView.xs.header?.beginRefreshing()
     }
     
     @objc func example11() {
