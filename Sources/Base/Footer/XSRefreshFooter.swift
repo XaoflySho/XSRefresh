@@ -63,9 +63,26 @@ open class XSRefreshFooter: XSRefreshComponent {
         }
     }
     
+    public override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        
+        guard let scrollView = self.scrollView else {
+            return
+        }
+        
+        self.xs.width = scrollView.xs.width
+        self.xs.x     = scrollView.xs.insetLeft
+        
+        /// 打开垂直方向弹簧效果
+        scrollView.alwaysBounceVertical = true
+        /// 记录 Scroll View 初始 Inset
+        scrollViewOriginalInset = scrollView.xs.inset
+    }
+    
     override open func prepare() {
         super.prepare()
-        
+        autoresizingMask = .flexibleWidth
+
         xs.height = XSRefreshConst.footerHeight
     }
 }

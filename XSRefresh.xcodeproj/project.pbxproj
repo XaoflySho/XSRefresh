@@ -14,6 +14,8 @@
 		17BE52E0242B3F9E00371D8D /* NewCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BE52DE242B3F9E00371D8D /* NewCollectionViewController.xib */; };
 		17BE52E3242B433100371D8D /* NewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52E1242B433100371D8D /* NewCollectionViewCell.swift */; };
 		17BE52E4242B433100371D8D /* NewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BE52E2242B433100371D8D /* NewCollectionViewCell.xib */; };
+		17BE52E9242B4BC800371D8D /* XSRefreshLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52E8242B4BC800371D8D /* XSRefreshLeader.swift */; };
+		17BE52EB242B52D900371D8D /* XSRefreshTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52EA242B52D900371D8D /* XSRefreshTrailer.swift */; };
 		17E1536A2429AFBE007F9952 /* XSRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 17E153682429AFBE007F9952 /* XSRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17E156AF2429D679007F9952 /* XSRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E156942429D679007F9952 /* XSRefreshBackGifFooter.swift */; };
 		17E156B02429D679007F9952 /* XSRefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E156952429D679007F9952 /* XSRefreshBackNormalFooter.swift */; };
@@ -89,6 +91,8 @@
 		17BE52DE242B3F9E00371D8D /* NewCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCollectionViewController.xib; sourceTree = "<group>"; };
 		17BE52E1242B433100371D8D /* NewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewCell.swift; sourceTree = "<group>"; };
 		17BE52E2242B433100371D8D /* NewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCollectionViewCell.xib; sourceTree = "<group>"; };
+		17BE52E8242B4BC800371D8D /* XSRefreshLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshLeader.swift; sourceTree = "<group>"; };
+		17BE52EA242B52D900371D8D /* XSRefreshTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshTrailer.swift; sourceTree = "<group>"; };
 		17E153652429AFBE007F9952 /* XSRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XSRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E153682429AFBE007F9952 /* XSRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSRefresh.h; sourceTree = "<group>"; };
 		17E153692429AFBE007F9952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,6 +178,22 @@
 				17BE52E2242B433100371D8D /* NewCollectionViewCell.xib */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		17BE52E6242B4B6800371D8D /* Leader */ = {
+			isa = PBXGroup;
+			children = (
+				17BE52E8242B4BC800371D8D /* XSRefreshLeader.swift */,
+			);
+			path = Leader;
+			sourceTree = "<group>";
+		};
+		17BE52E7242B4B7200371D8D /* Trailer */ = {
+			isa = PBXGroup;
+			children = (
+				17BE52EA242B52D900371D8D /* XSRefreshTrailer.swift */,
+			);
+			path = Trailer;
 			sourceTree = "<group>";
 		};
 		17E1535B2429AFBE007F9952 = {
@@ -264,6 +284,8 @@
 				17E156A42429D679007F9952 /* XSRefreshComponent.swift */,
 				17E156A52429D679007F9952 /* Header */,
 				17E156A02429D679007F9952 /* Footer */,
+				17BE52E6242B4B6800371D8D /* Leader */,
+				17BE52E7242B4B7200371D8D /* Trailer */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -483,9 +505,11 @@
 				17E156B72429D679007F9952 /* XSRefreshStateHeader.swift in Sources */,
 				17E156B52429D679007F9952 /* XSRefreshNormalHeader.swift in Sources */,
 				17E156B22429D679007F9952 /* XSRefreshAutoStateFooter.swift in Sources */,
+				17BE52E9242B4BC800371D8D /* XSRefreshLeader.swift in Sources */,
 				17E156B32429D679007F9952 /* XSRefreshAutoNormalFooter.swift in Sources */,
 				17E156BB2429D679007F9952 /* XSRefreshComponent.swift in Sources */,
 				17E156B92429D679007F9952 /* XSRefreshBackFooter.swift in Sources */,
+				17BE52EB242B52D900371D8D /* XSRefreshTrailer.swift in Sources */,
 				17E156AF2429D679007F9952 /* XSRefreshBackGifFooter.swift in Sources */,
 				17E156C02429D679007F9952 /* XSScrollView.swift in Sources */,
 				17E156BA2429D679007F9952 /* XSRefreshAutoFooter.swift in Sources */,

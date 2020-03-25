@@ -1,41 +1,41 @@
 //
-//  XSRefreshHeader.swift
+//  XSRefreshLeader.swift
+//  XSRefresh
 //
-//
-//  Created by 邵晓飞 on 2020/3/20.
+//  Created by 邵晓飞 on 2020/3/25.
+//  Copyright © 2020 zlucy. All rights reserved.
 //
 
 import UIKit
 
-open class XSRefreshHeader: XSRefreshComponent {
-
+open class XSRefreshLeader: XSRefreshComponent {
     
-    /// 创建 Refresh Header
+    /// 创建 Refresh Leader
     /// - Parameter block: 回调
-    public class func header(WithRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshHeader {
-        let header = self.init()
-        header.refreshingBlock = block
-        return header
+    public class func leader(WithRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshLeader {
+        let leader = self.init()
+        leader.refreshingBlock = block
+        return leader
     }
     
-    /// 创建 Refresh Header
+    /// 创建 Refresh Leader
     /// - Parameter block: 回调
     public convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {
         self.init()
         self.refreshingBlock = block
     }
     
-    /// 创建 Refresh Header
+    /// 创建 Refresh Leader
     /// - Parameters:
     ///   - target: 回调目标
     ///   - action: 回调方法
-    public class func header(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshHeader {
-        let header = self.init()
-        header.setRefreshing(target: target, action: action)
-        return header
+    public class func leader(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshLeader {
+        let leader = self.init()
+        leader.setRefreshing(target: target, action: action)
+        return leader
     }
     
-    /// 创建 Refresh Header
+    /// 创建 Refresh Leader
     /// - Parameters:
     ///   - target: 回调目标
     ///   - action: 回调方法
@@ -44,20 +44,8 @@ open class XSRefreshHeader: XSRefreshComponent {
         self.setRefreshing(target: target, action: action)
     }
     
-    open var lastUpdatedTimeKey: String = XSRefreshHeaderConst.lastUpdateTimeKey
-    open var lastUpdatedTime: Date? {
-        return UserDefaults.standard.object(forKey: lastUpdatedTimeKey) as? Date
-    }
-    
-    /// 忽略 Scroll View 的 Content Inset 顶部距离
-    open var ignoredScrollViewContentInsetTop: CGFloat = 0 {
-        didSet {
-            self.xs.y = -self.xs.height - ignoredScrollViewContentInsetTop
-        }
-    }
-    
     // MARK: - Private
-    private var insetTDelta: CGFloat = 0
+    private var insetLDelta: CGFloat = 0
     
     public override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -66,29 +54,30 @@ open class XSRefreshHeader: XSRefreshComponent {
             return
         }
         
-        self.xs.width = scrollView.xs.width
-        self.xs.x     = scrollView.xs.insetLeft
+        self.xs.height = scrollView.xs.height
+        self.xs.y      = scrollView.xs.insetTop
         
-        /// 打开垂直方向弹簧效果
-        scrollView.alwaysBounceVertical = true
+        /// 打开水平方向弹簧效果
+        scrollView.alwaysBounceHorizontal = true
         /// 记录 Scroll View 初始 Inset
         scrollViewOriginalInset = scrollView.xs.inset
     }
     
-    override open func prepare() {
+    
+    open override func prepare() {
         super.prepare()
-        autoresizingMask = .flexibleWidth
+        autoresizingMask = .flexibleHeight
 
-        xs.height = XSRefreshConst.headerHeight
+        xs.width = XSRefreshConst.leaderWidth
     }
     
-    override open func placeSubviews() {
+    open override func placeSubviews() {
         super.placeSubviews()
         
-        xs.y = -xs.height - ignoredScrollViewContentInsetTop
+        xs.x = -xs.width
     }
     
-    override open var state: XSRefresh.State {
+    open override var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
                 return
@@ -99,13 +88,10 @@ open class XSRefreshHeader: XSRefreshComponent {
                 if oldValue != .refreshing {
                     return
                 }
-                UserDefaults.standard.set(Date(), forKey: lastUpdatedTimeKey)
-                UserDefaults.standard.synchronize()
-                                
                 scrollView.isUserInteractionEnabled = false
                 
                 UIView.animate(withDuration: XSRefreshConst.slowAnimationDuration, animations: {
-                    scrollView.xs.insetTop += self.insetTDelta
+                    scrollView.xs.insetLeft += self.insetLDelta
                     if self.automaticallyChangeAlpha {
                         self.alpha = 0.0
                     }
@@ -125,10 +111,10 @@ open class XSRefreshHeader: XSRefreshComponent {
                     scrollView.isUserInteractionEnabled = false
                     
                     UIView.animate(withDuration: XSRefreshConst.fastAnimationDuration, animations: {
-                        let top = self.scrollViewOriginalInset.top + self.xs.height
-                        scrollView.xs.insetTop = top
+                        let left = self.scrollViewOriginalInset.left + self.xs.width
+                        scrollView.xs.insetLeft = left
                         var offset = scrollView.contentOffset
-                        offset.y = -top
+                        offset.x = -left
                         scrollView.setContentOffset(offset, animated: false)
                     }) { (_) in
                         scrollView.isUserInteractionEnabled = true
@@ -145,43 +131,40 @@ open class XSRefreshHeader: XSRefreshComponent {
         super.scrollViewContentOffsetDidChange(change)
         
         guard let scrollView = self.scrollView else { return }
-        if self.state == .refreshing {
+        if state == .refreshing {
             
-            var insetTop = max(-scrollView.xs.offsetY, scrollViewOriginalInset.top)
-            insetTop = min(insetTop, xs.height + scrollViewOriginalInset.top)
-            scrollView.xs.insetTop = insetTop
-            insetTDelta = scrollViewOriginalInset.top - insetTop
+            var insetLeft = max(-scrollView.xs.offsetX, scrollViewOriginalInset.left)
+            insetLeft = min(insetLeft, xs.width + scrollViewOriginalInset.left)
+            scrollView.xs.insetLeft = insetLeft
+            insetLDelta = scrollViewOriginalInset.left - insetLeft
             
             return
         }
         
         scrollViewOriginalInset = scrollView.xs.inset
         
-        let offsetY = scrollView.xs.offsetY
-        let happenOffsetY = -scrollViewOriginalInset.top
+        let offsetX = scrollView.xs.offsetX
+        let happenOffsetX = -scrollViewOriginalInset.left
         
-        if offsetY > happenOffsetY {
+        if offsetX > happenOffsetX {
             return
         }
         
-        // 普通 和 即将刷新 的临界点
-        let normalPullingOffsetY = happenOffsetY - xs.height
-        let pullingPercent = (happenOffsetY - offsetY) / xs.height
-        // 如果正在拖拽
+        let normalPullingOffsetX = happenOffsetX - xs.width
+        let pullingPercent = (happenOffsetX - offsetX) / xs.width
+        
         if scrollView.isDragging {
             self.pullingPercent = pullingPercent
-            if self.state == .idle && offsetY < normalPullingOffsetY {
-                // 转为即将刷新状态
+            if self.state == .idle && offsetX < normalPullingOffsetX {
                 self.state = .pulling
-            } else if self.state == .pulling && offsetY >= normalPullingOffsetY {
-                // 转为普通状态
+            } else if self.state == .pulling && offsetX >= normalPullingOffsetX {
                 self.state = .idle
             }
-        } else if self.state == .pulling { // 即将刷新 && 手松开
-            //开始刷新
+        } else if self.state == .pulling {
             self.beginRefreshing()
         } else if pullingPercent < 1 {
             self.pullingPercent = pullingPercent
         }
     }
 }
+
