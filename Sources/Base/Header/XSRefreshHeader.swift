@@ -124,7 +124,7 @@ open class XSRefreshHeader: XSRefreshComponent {
         }
     }
     
-    override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+    open override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentOffsetDidChange(change)
         
         guard let scrollView = self.scrollView else { return }

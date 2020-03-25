@@ -18,7 +18,7 @@ open class XSRefreshBackFooter: XSRefreshFooter {
         scrollViewContentSizeDidChange(nil)
     }
     
-    override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+    open override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentOffsetDidChange(change)
         
         guard state != .refreshing, let scrollView = scrollView else {
@@ -51,7 +51,7 @@ open class XSRefreshBackFooter: XSRefreshFooter {
         }
     }
     
-    override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+    open override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentSizeDidChange(change)
         guard let scrollView = scrollView else {
             return

@@ -76,13 +76,13 @@ open class XSRefreshComponent: UIView {
     private var pan: UIPanGestureRecognizer?
     
     // MARK: - 初始化
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         prepare()
     }
     
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         prepare()
@@ -178,11 +178,11 @@ open class XSRefreshComponent: UIView {
     }
     
     /// 当 Scroll View 的 Content Size 发生改变的时候调用
-    func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    open func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
     /// 当 Scroll View 的 Content Offset 发生改变的时候调用
-    func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    open func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
     /// 当 Scroll View 的拖拽状态发生改变的时候调用
-    func scrollViewPanStateDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
+    open func scrollViewPanStateDidChange(_ change: [NSKeyValueChangeKey : Any]?) {}
     
 
     /// 开始刷新
