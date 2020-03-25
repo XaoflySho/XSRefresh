@@ -68,6 +68,27 @@ public extension XS where Base: UIView {
             return base.frame.origin
         }
     }
+    
+    @available(iOS 11.0, *)
+    var safeWidth: CGFloat {
+        get {
+            return base.frame.size.width - base.safeAreaInsets.left - base.safeAreaInsets.right
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    var safeHeight: CGFloat {
+        get {
+            return base.frame.size.height - base.safeAreaInsets.top - base.safeAreaInsets.bottom
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    var safeSize: CGSize {
+        get {
+            return CGSize(width: self.safeWidth, height: self.safeHeight)
+        }
+    }
 }
 
 public extension XS where Base: UIView {
