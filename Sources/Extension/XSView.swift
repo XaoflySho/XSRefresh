@@ -69,3 +69,76 @@ public extension XS where Base: UIView {
         }
     }
 }
+
+public extension XS where Base: UIView {
+    var cornerRadius: CGFloat {
+        set {
+            base.layer.cornerRadius = newValue
+        }
+        get {
+            return base.layer.cornerRadius
+        }
+    }
+    
+    var borderWidth: CGFloat {
+        get {
+            return base.layer.borderWidth
+        }
+        set {
+            base.layer.borderWidth = newValue
+        }
+    }
+    
+    var borderColor: UIColor? {
+        get {
+            if let color = base.layer.borderColor {
+                return UIColor(cgColor: color)
+            } else {
+                return nil
+            }
+        }
+        set {
+            base.layer.borderColor = newValue?.cgColor
+        }
+    }
+    
+    var shadowRadius: CGFloat {
+        get {
+            return base.layer.shadowRadius
+        }
+        set {
+            base.layer.shadowRadius = newValue
+        }
+    }
+    
+    var shadowOpacity: Float {
+        get {
+            return base.layer.shadowOpacity
+        }
+        set {
+            base.layer.shadowOpacity = newValue
+        }
+    }
+    
+    var shadowColor: UIColor? {
+        get {
+            if let color = base.layer.shadowColor {
+                return UIColor(cgColor: color)
+            } else {
+                return nil
+            }
+        }
+        set {
+            base.layer.shadowColor = newValue?.cgColor
+        }
+    }
+    
+    var shadowOffset: CGSize {
+        get {
+            return base.layer.shadowOffset
+        }
+        set {
+            base.layer.shadowOffset = newValue
+        }
+    }
+}
