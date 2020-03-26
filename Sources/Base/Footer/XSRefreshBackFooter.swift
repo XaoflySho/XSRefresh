@@ -21,7 +21,13 @@ open class XSRefreshBackFooter: XSRefreshFooter {
     open override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentOffsetDidChange(change)
         
-        guard state != .refreshing, let scrollView = scrollView else {
+        guard let scrollView = scrollView else {
+            return
+        }
+        
+        xs.x = scrollView.contentOffset.x + scrollView.xs.insetLeft
+        
+        guard state != .refreshing else {
             return
         }
         

@@ -77,7 +77,11 @@ open class XSRefreshLeader: XSRefreshComponent {
         xs.x = -xs.width
         
         if let scrollView = scrollView {
-            xs.height = scrollView.xs.contentHeight
+            if #available(iOS 11.0, *) {
+                xs.height = scrollView.xs.safeAreaHeight
+            } else {
+                xs.height = scrollView.xs.height
+            }
         }
     }
     
@@ -135,6 +139,9 @@ open class XSRefreshLeader: XSRefreshComponent {
         super.scrollViewContentOffsetDidChange(change)
         
         guard let scrollView = self.scrollView else { return }
+        
+        xs.y = scrollView.contentOffset.y + scrollView.xs.insetTop
+        
         if state == .refreshing {
             
             var insetLeft = max(-scrollView.xs.offsetX, scrollViewOriginalInset.left)

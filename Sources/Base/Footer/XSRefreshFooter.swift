@@ -70,8 +70,11 @@ open class XSRefreshFooter: XSRefreshComponent {
             return
         }
         
-        self.xs.width = scrollView.xs.width
-        self.xs.x     = scrollView.xs.insetLeft
+        if #available(iOS 11.0, *) {
+            xs.width = scrollView.xs.safeAreaWidth
+        } else {
+            xs.width = scrollView.xs.width
+        }
         
         /// 打开垂直方向弹簧效果
         scrollView.alwaysBounceVertical = true

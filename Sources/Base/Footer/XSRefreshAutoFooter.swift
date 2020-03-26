@@ -57,6 +57,8 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
             return
         }
         
+        xs.x = scrollView.contentOffset.x + scrollView.xs.insetLeft
+
         if state != .idle || !automaticallyRefresh || xs.y == 0 {
             return
         }
