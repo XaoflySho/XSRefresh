@@ -8,7 +8,6 @@
 import UIKit
 
 open class XSRefreshHeader: XSRefreshComponent {
-
     
     /// 创建 Refresh Header
     /// - Parameter block: 回调
@@ -44,6 +43,8 @@ open class XSRefreshHeader: XSRefreshComponent {
         self.setRefreshing(target: target, action: action)
     }
     
+    // MARK: -
+    
     open var lastUpdatedTimeKey: String = XSRefreshHeaderConst.lastUpdateTimeKey
     open var lastUpdatedTime: Date? {
         return UserDefaults.standard.object(forKey: lastUpdatedTimeKey) as? Date
@@ -56,40 +57,7 @@ open class XSRefreshHeader: XSRefreshComponent {
         }
     }
     
-    // MARK: - Private
-    private var insetTDelta: CGFloat = 0
     
-    public override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-        
-        guard let scrollView = self.scrollView else {
-            return
-        }
-        
-        if #available(iOS 11.0, *) {
-            xs.width = scrollView.xs.safeAreaWidth
-        } else {
-            xs.width = scrollView.xs.width
-        }
-        
-        /// 打开垂直方向弹簧效果
-        scrollView.alwaysBounceVertical = true
-        /// 记录 Scroll View 初始 Inset
-        scrollViewOriginalInset = scrollView.xs.inset
-    }
-    
-    override open func prepare() {
-        super.prepare()
-        autoresizingMask = .flexibleWidth
-
-        xs.height = XSRefreshConst.headerHeight
-    }
-    
-    override open func placeSubviews() {
-        super.placeSubviews()
-        
-        xs.y = -xs.height - ignoredScrollViewContentInsetTop
-    }
     
     override open var state: XSRefresh.State {
         didSet {
@@ -142,6 +110,44 @@ open class XSRefreshHeader: XSRefreshComponent {
                 break
             }
         }
+    }
+    
+    // MARK: -
+    
+    private var insetTDelta: CGFloat = 0
+    
+    override open func prepare() {
+        super.prepare()
+        autoresizingMask = .flexibleWidth
+
+        xs.height = XSRefreshConst.headerHeight
+    }
+    
+    override open func placeSubviews() {
+        super.placeSubviews()
+        
+        xs.y = -xs.height - ignoredScrollViewContentInsetTop
+        
+        if let scrollView = scrollView {
+            if #available(iOS 11.0, *) {
+                xs.width = scrollView.xs.safeAreaWidth
+            } else {
+                xs.width = scrollView.xs.width
+            }
+        }
+    }
+    
+    public override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        
+        guard let scrollView = self.scrollView else {
+            return
+        }
+        
+        /// 打开垂直方向弹簧效果
+        scrollView.alwaysBounceVertical = true
+        /// 记录 Scroll View 初始 Inset
+        scrollViewOriginalInset = scrollView.xs.inset
     }
     
     open override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {

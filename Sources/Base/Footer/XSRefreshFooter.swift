@@ -43,8 +43,42 @@ open class XSRefreshFooter: XSRefreshComponent {
         self.setRefreshing(target: target, action: action)
     }
     
+    // MARK: -
+    
     /// 忽略 Scroll View 的 Content Inset 底部距离
     public var ignoredScrollViewContentInsetBottom: CGFloat = 0
+    
+    override open func prepare() {
+        super.prepare()
+        autoresizingMask = .flexibleWidth
+
+        xs.height = XSRefreshConst.footerHeight
+    }
+    
+    open override func placeSubviews() {
+        super.placeSubviews()
+        
+        if let scrollView = scrollView {
+            if #available(iOS 11.0, *) {
+                xs.width = scrollView.xs.safeAreaWidth
+            } else {
+                xs.width = scrollView.xs.width
+            }
+        }
+    }
+    
+    public override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        
+        guard let scrollView = self.scrollView else {
+            return
+        }
+        
+        /// 打开垂直方向弹簧效果
+        scrollView.alwaysBounceVertical = true
+        /// 记录 Scroll View 初始 Inset
+        scrollViewOriginalInset = scrollView.xs.inset
+    }
     
     public func endRefreshingWithNoMoreData(completion block: (() -> Void)? = nil) {
         
@@ -63,29 +97,4 @@ open class XSRefreshFooter: XSRefreshComponent {
         }
     }
     
-    public override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-        
-        guard let scrollView = self.scrollView else {
-            return
-        }
-        
-        if #available(iOS 11.0, *) {
-            xs.width = scrollView.xs.safeAreaWidth
-        } else {
-            xs.width = scrollView.xs.width
-        }
-        
-        /// 打开垂直方向弹簧效果
-        scrollView.alwaysBounceVertical = true
-        /// 记录 Scroll View 初始 Inset
-        scrollViewOriginalInset = scrollView.xs.inset
-    }
-    
-    override open func prepare() {
-        super.prepare()
-        autoresizingMask = .flexibleWidth
-
-        xs.height = XSRefreshConst.footerHeight
-    }
 }

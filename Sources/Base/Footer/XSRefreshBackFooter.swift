@@ -12,61 +12,6 @@ open class XSRefreshBackFooter: XSRefreshFooter {
     private var lastRefreshCount: Int = 0
     private var lastBottomDelta: CGFloat = 0
     
-    override public func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
-        
-        scrollViewContentSizeDidChange(nil)
-    }
-    
-    open override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
-        super.scrollViewContentOffsetDidChange(change)
-        
-        guard let scrollView = scrollView else {
-            return
-        }
-        
-        xs.x = scrollView.contentOffset.x + scrollView.xs.insetLeft
-        
-        guard state != .refreshing else {
-            return
-        }
-        
-        scrollViewOriginalInset = scrollView.xs.inset
-        let currentOffsetY = scrollView.xs.offsetY
-        let happenOffsetY = getHappenOffsetY()
-        if currentOffsetY <= happenOffsetY {
-            return
-        }
-        let pullingPercent = (currentOffsetY - happenOffsetY) / xs.height;
-        if state == .noMoreData {
-            self.pullingPercent = pullingPercent
-        }
-        
-        if scrollView.isDragging {
-            self.pullingPercent = pullingPercent
-            let normalPullingOffsetY = happenOffsetY + xs.height;
-            if state == .idle, currentOffsetY > normalPullingOffsetY {
-                state = .pulling
-            } else if state == .pulling, currentOffsetY <= normalPullingOffsetY {
-                state = .idle
-            }
-        } else if state == .pulling {
-            beginRefreshing()
-        } else if pullingPercent < 1 {
-            self.pullingPercent = pullingPercent
-        }
-    }
-    
-    open override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
-        super.scrollViewContentSizeDidChange(change)
-        guard let scrollView = scrollView else {
-            return
-        }
-        let contentHeight = scrollView.xs.contentHeight + ignoredScrollViewContentInsetBottom;
-        let scrollHeight = scrollView.xs.height - scrollViewOriginalInset.top - scrollViewOriginalInset.bottom + ignoredScrollViewContentInsetBottom;
-        xs.y = max(contentHeight, scrollHeight)
-    }
-    
     override open var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
@@ -77,7 +22,7 @@ open class XSRefreshBackFooter: XSRefreshFooter {
                 if oldValue == .refreshing {
                     UIView.animate(withDuration: XSRefreshConst.slowAnimationDuration, animations: {
                         self.endRefreshingAnimationBeginAction?()
-                        scrollView.xs.insetBottom -= self.lastBottomDelta;
+                        scrollView.xs.insetBottom -= self.lastBottomDelta
 
                         if self.automaticallyChangeAlpha {
                             self.alpha = 0.0
@@ -111,6 +56,61 @@ open class XSRefreshBackFooter: XSRefreshFooter {
                 }
             }
         }
+    }
+    
+    override public func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        
+        scrollViewContentSizeDidChange(nil)
+    }
+    
+    open override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+        super.scrollViewContentOffsetDidChange(change)
+        
+        guard let scrollView = scrollView else {
+            return
+        }
+        
+        xs.x = scrollView.contentOffset.x + scrollView.xs.insetLeft
+        
+        guard state != .refreshing else {
+            return
+        }
+        
+        scrollViewOriginalInset = scrollView.xs.inset
+        let currentOffsetY = scrollView.xs.offsetY
+        let happenOffsetY = getHappenOffsetY()
+        if currentOffsetY <= happenOffsetY {
+            return
+        }
+        let pullingPercent = (currentOffsetY - happenOffsetY) / xs.height
+        if state == .noMoreData {
+            self.pullingPercent = pullingPercent
+        }
+        
+        if scrollView.isDragging {
+            self.pullingPercent = pullingPercent
+            let normalPullingOffsetY = happenOffsetY + xs.height
+            if state == .idle, currentOffsetY > normalPullingOffsetY {
+                state = .pulling
+            } else if state == .pulling, currentOffsetY <= normalPullingOffsetY {
+                state = .idle
+            }
+        } else if state == .pulling {
+            beginRefreshing()
+        } else if pullingPercent < 1 {
+            self.pullingPercent = pullingPercent
+        }
+    }
+    
+    open override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
+        super.scrollViewContentSizeDidChange(change)
+        guard let scrollView = scrollView else {
+            return
+        }
+        let contentHeight = scrollView.xs.contentHeight + ignoredScrollViewContentInsetBottom
+        let scrollHeight = scrollView.xs.height - scrollViewOriginalInset.top - scrollViewOriginalInset.bottom + ignoredScrollViewContentInsetBottom
+        xs.y = max(contentHeight, scrollHeight)
     }
     
     private func getHappenOffsetY() -> CGFloat {

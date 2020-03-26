@@ -1,15 +1,15 @@
 //
-//  XSRefreshStateLeader.swift
+//  XSRefreshStateTrailer.swift
 //  XSRefresh
 //
-//  Created by 邵晓飞 on 2020/3/25.
+//  Created by 邵晓飞 on 2020/3/26.
 //  Copyright © 2020 zlucy. All rights reserved.
 //
 
 import UIKit
 
-open class XSRefreshStateLeader: XSRefreshLeader {
-
+open class XSRefreshStateTrailer: XSRefreshTrailer {
+    
     public lazy var stateLabel: UILabel = {
         let label = UILabel.standard()
         label.transform = .init(rotationAngle: -CGFloat.pi / 2)
@@ -45,4 +45,5 @@ open class XSRefreshStateLeader: XSRefreshLeader {
         stateTitles[state] = text
         stateLabel.text = stateTitles[self.state]
     }
+    
 }

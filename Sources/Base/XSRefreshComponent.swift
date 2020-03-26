@@ -101,6 +101,14 @@ open class XSRefreshComponent: UIView {
     /// 设置子控件 Frame
     open func placeSubviews() {}
     
+    override public func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        if state == .willRefresh {
+            state = .refreshing
+        }
+    }
+    
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
@@ -115,14 +123,6 @@ open class XSRefreshComponent: UIView {
         
         /// 添加监听
         addObservers()
-    }
-    
-    override public func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        if state == .willRefresh {
-            state = .refreshing
-        }
     }
     
     /// 添加监听
@@ -142,7 +142,7 @@ open class XSRefreshComponent: UIView {
         pan = nil
     }
     
-    
+    /// 监听
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard isUserInteractionEnabled else {
             return
