@@ -28,9 +28,10 @@ open class XSRefreshStateTrailer: XSRefreshTrailer {
         super.prepare()
         addSubview(stateLabel)
         
-        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.idleText), for: .idle)
-        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.pullingText), for: .pulling)
-        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.refreshingText), for: .refreshing)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.idleText), for: .idle)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.pullingText), for: .pulling)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.refreshingText), for: .refreshing)
+        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.noMoreDataText), for: .noMoreData)
     }
     
     open override func placeSubviews() {
