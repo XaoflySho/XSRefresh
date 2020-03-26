@@ -37,8 +37,10 @@ class NewCollectionViewController: UIViewController {
             }
         }
         
-        collectionView.xs.trailer = XSRefreshTrailer {
-            
+        collectionView.xs.trailer = XSRefreshStateTrailer {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                self?.collectionView.xs.trailer?.endRefreshing()
+            }
         }
     }
 
