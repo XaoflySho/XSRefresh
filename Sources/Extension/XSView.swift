@@ -68,4 +68,98 @@ public extension XS where Base: UIView {
             return base.frame.origin
         }
     }
+    
+    @available(iOS 11.0, *)
+    var safeAreaWidth: CGFloat {
+        get {
+            return base.frame.size.width - base.safeAreaInsets.left - base.safeAreaInsets.right
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    var safeAreaHeight: CGFloat {
+        get {
+            return base.frame.size.height - base.safeAreaInsets.top - base.safeAreaInsets.bottom
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    var safeAreaSize: CGSize {
+        get {
+            return CGSize(width: self.safeAreaWidth, height: self.safeAreaHeight)
+        }
+    }
+}
+
+public extension XS where Base: UIView {
+    var cornerRadius: CGFloat {
+        set {
+            base.layer.cornerRadius = newValue
+        }
+        get {
+            return base.layer.cornerRadius
+        }
+    }
+    
+    var borderWidth: CGFloat {
+        get {
+            return base.layer.borderWidth
+        }
+        set {
+            base.layer.borderWidth = newValue
+        }
+    }
+    
+    var borderColor: UIColor? {
+        get {
+            if let color = base.layer.borderColor {
+                return UIColor(cgColor: color)
+            } else {
+                return nil
+            }
+        }
+        set {
+            base.layer.borderColor = newValue?.cgColor
+        }
+    }
+    
+    var shadowRadius: CGFloat {
+        get {
+            return base.layer.shadowRadius
+        }
+        set {
+            base.layer.shadowRadius = newValue
+        }
+    }
+    
+    var shadowOpacity: Float {
+        get {
+            return base.layer.shadowOpacity
+        }
+        set {
+            base.layer.shadowOpacity = newValue
+        }
+    }
+    
+    var shadowColor: UIColor? {
+        get {
+            if let color = base.layer.shadowColor {
+                return UIColor(cgColor: color)
+            } else {
+                return nil
+            }
+        }
+        set {
+            base.layer.shadowColor = newValue?.cgColor
+        }
+    }
+    
+    var shadowOffset: CGSize {
+        get {
+            return base.layer.shadowOffset
+        }
+        set {
+            base.layer.shadowOffset = newValue
+        }
+    }
 }

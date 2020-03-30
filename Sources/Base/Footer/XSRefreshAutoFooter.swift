@@ -22,6 +22,42 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
     private var triggerByDrag: Bool = false
     private var leftTriggerTimes: Int = 0
     
+    override open var state: XSRefresh.State {
+        didSet {
+            guard let scrollView = self.scrollView else {
+                return
+            }
+            
+            if state == .refreshing {
+                executeRefreshingCallback()
+            } else if state == .noMoreData || state == .idle {
+                if triggerByDrag {
+                    if !unlimitedTrigger {
+                        leftTriggerTimes -= 1
+                    }
+                    triggerByDrag = false
+                }
+                
+                if oldValue == .refreshing {
+                    if scrollView.isPagingEnabled {
+                        var offset = scrollView.contentOffset
+                        offset.y -= scrollView.xs.insetBottom
+                        
+                        UIView.animate(withDuration: XSRefreshConst.slowAnimationDuration, animations: {
+                            scrollView.contentOffset = offset
+                            self.endRefreshingAnimationBeginAction?()
+                        }) { (_) in
+                            self.endRefreshingCompletionBlock?()
+                        }
+                        return
+                    }
+                    
+                    endRefreshingCompletionBlock?()
+                }
+            }
+        }
+    }
+    
     public override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         guard let scrollView = scrollView else {
@@ -39,10 +75,6 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
         }
     }
     
-    override open func prepare() {
-        super.prepare()
-    }
-    
     open override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentSizeDidChange(change)
         guard let scrollView = scrollView else {
@@ -57,6 +89,8 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
             return
         }
         
+        xs.x = scrollView.contentOffset.x + scrollView.xs.insetLeft
+
         if state != .idle || !automaticallyRefresh || xs.y == 0 {
             return
         }
@@ -117,42 +151,6 @@ open class XSRefreshAutoFooter: XSRefreshFooter {
         }
         
         super.beginRefreshing(withCompletion: block)
-    }
-    
-    override open var state: XSRefresh.State {
-        didSet {
-            guard let scrollView = self.scrollView else {
-                return
-            }
-            
-            if state == .refreshing {
-                executeRefreshingCallback()
-            } else if state == .noMoreData || state == .idle {
-                if triggerByDrag {
-                    if !unlimitedTrigger {
-                        leftTriggerTimes -= 1
-                    }
-                    triggerByDrag = false
-                }
-                
-                if oldValue == .refreshing {
-                    if scrollView.isPagingEnabled {
-                        var offset = scrollView.contentOffset
-                        offset.y -= scrollView.xs.insetBottom
-                        
-                        UIView.animate(withDuration: XSRefreshConst.slowAnimationDuration, animations: {
-                            scrollView.contentOffset = offset
-                            self.endRefreshingAnimationBeginAction?()
-                        }) { (_) in
-                            self.endRefreshingCompletionBlock?()
-                        }
-                        return
-                    }
-                    
-                    endRefreshingCompletionBlock?()
-                }
-            }
-        }
     }
     
     func resetTriggerTimes() {

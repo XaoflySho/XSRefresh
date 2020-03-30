@@ -12,7 +12,8 @@ import XSRefresh
 let MJExample00: String = "UITableView + 下拉刷新"
 let MJExample10: String = "UITableView + 上拉刷新"
 let MJExample20: String = "UICollectionView"
-let MJExample30: String = "WKWebView"
+let MJExample30: String = "UICollectionView"
+let MJExample40: String = "WKWebView"
 
 class ViewController: UIViewController {
 
@@ -47,11 +48,19 @@ class ViewController: UIViewController {
         
         var example3 = XSExample()
         example3.header = MJExample30
-        example3.viewControllerClass = XSWKWebViewViewController.self
-        example3.titles = ["下拉刷新"]
-        example3.methods = ["example41"]
+        example3.viewControllerClass = NewCollectionViewController.self
+        example3.titles = ["左右拉刷新"]
+        example3.methods = ["example31"]
         
         examples.append(example3)
+        
+        var example4 = XSExample()
+        example4.header = MJExample40
+        example4.viewControllerClass = XSWKWebViewViewController.self
+        example4.titles = ["下拉刷新"]
+        example4.methods = ["example41"]
+        
+        examples.append(example4)
         
         return examples
     }()

@@ -68,7 +68,7 @@ open class XSRefreshComponent: UIView {
     }
     
     /// 父控件
-    private(set) weak var scrollView: UIScrollView?
+    weak var scrollView: UIScrollView?
     /// Scroll View 初始 Inset
     var scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.zero
     
@@ -90,7 +90,6 @@ open class XSRefreshComponent: UIView {
     
     /// 初始化
     open func prepare() {
-        autoresizingMask = .flexibleWidth
         backgroundColor  = .clear
     }
     
@@ -101,6 +100,14 @@ open class XSRefreshComponent: UIView {
     
     /// 设置子控件 Frame
     open func placeSubviews() {}
+    
+    override public func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        if state == .willRefresh {
+            state = .refreshing
+        }
+    }
     
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -114,28 +121,8 @@ open class XSRefreshComponent: UIView {
         
         self.scrollView = newSuperview
         
-        guard let scrollView = self.scrollView else {
-            return
-        }
-        
-        self.xs.width = scrollView.xs.width
-        self.xs.x     = scrollView.xs.insetLeft
-        
-        /// 打开垂直方向弹簧效果
-        scrollView.alwaysBounceVertical = true
-        /// 记录 Scroll View 初始 Inset
-        scrollViewOriginalInset = scrollView.xs.inset
-        
         /// 添加监听
         addObservers()
-    }
-    
-    override public func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        if state == .willRefresh {
-            state = .refreshing
-        }
     }
     
     /// 添加监听
@@ -155,7 +142,7 @@ open class XSRefreshComponent: UIView {
         pan = nil
     }
     
-    
+    /// 监听
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard isUserInteractionEnabled else {
             return
