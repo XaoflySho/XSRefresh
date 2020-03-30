@@ -108,7 +108,7 @@ func tableViewRefreshSetting() {
 
 - [ ] ~~支持 Swift Package Manager 管理工具~~
 
-- [ ] 支持横向滚动的控件，例如Collection View
+- [x] 支持横向滚动的控件，例如Collection View
 
 - [ ] ......
 
