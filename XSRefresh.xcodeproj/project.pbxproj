@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		179AC221242C78ED005B43DC /* XSRefreshStateTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179AC220242C78ED005B43DC /* XSRefreshStateTrailer.swift */; };
+		179B9F322431903B00A284AD /* XSRefreshNormalLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B9F312431903B00A284AD /* XSRefreshNormalLeader.swift */; };
+		179B9F34243193F900A284AD /* XSRefreshNormalTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B9F33243193F900A284AD /* XSRefreshNormalTrailer.swift */; };
 		17BE52D7242B2EEE00371D8D /* XSExampleCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52D6242B2EEE00371D8D /* XSExampleCustomHeader.swift */; };
 		17BE52D9242B34F700371D8D /* XSExampleCustomAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52D8242B34F700371D8D /* XSExampleCustomAutoFooter.swift */; };
 		17BE52DB242B351A00371D8D /* XSExampleCustomBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52DA242B351A00371D8D /* XSExampleCustomBackFooter.swift */; };
@@ -87,6 +89,8 @@
 
 /* Begin PBXFileReference section */
 		179AC220242C78ED005B43DC /* XSRefreshStateTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshStateTrailer.swift; sourceTree = "<group>"; };
+		179B9F312431903B00A284AD /* XSRefreshNormalLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshNormalLeader.swift; sourceTree = "<group>"; };
+		179B9F33243193F900A284AD /* XSRefreshNormalTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshNormalTrailer.swift; sourceTree = "<group>"; };
 		17BE52D6242B2EEE00371D8D /* XSExampleCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomHeader.swift; sourceTree = "<group>"; };
 		17BE52D8242B34F700371D8D /* XSExampleCustomAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomAutoFooter.swift; sourceTree = "<group>"; };
 		17BE52DA242B351A00371D8D /* XSExampleCustomBackFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomBackFooter.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				179AC220242C78ED005B43DC /* XSRefreshStateTrailer.swift */,
+				179B9F33243193F900A284AD /* XSRefreshNormalTrailer.swift */,
 			);
 			path = Trailer;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				17BE52ED242B641100371D8D /* XSRefreshStateLeader.swift */,
+				179B9F312431903B00A284AD /* XSRefreshNormalLeader.swift */,
 			);
 			path = Leader;
 			sourceTree = "<group>";
@@ -532,7 +538,9 @@
 				17E156BB2429D679007F9952 /* XSRefreshComponent.swift in Sources */,
 				17E156B92429D679007F9952 /* XSRefreshBackFooter.swift in Sources */,
 				17BE52EB242B52D900371D8D /* XSRefreshTrailer.swift in Sources */,
+				179B9F34243193F900A284AD /* XSRefreshNormalTrailer.swift in Sources */,
 				17E156AF2429D679007F9952 /* XSRefreshBackGifFooter.swift in Sources */,
+				179B9F322431903B00A284AD /* XSRefreshNormalLeader.swift in Sources */,
 				17E156C02429D679007F9952 /* XSScrollView.swift in Sources */,
 				17E156BA2429D679007F9952 /* XSRefreshAutoFooter.swift in Sources */,
 				179AC221242C78ED005B43DC /* XSRefreshStateTrailer.swift in Sources */,

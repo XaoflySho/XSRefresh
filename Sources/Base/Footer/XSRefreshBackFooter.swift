@@ -11,7 +11,7 @@ open class XSRefreshBackFooter: XSRefreshFooter {
     
     private var lastRefreshCount: Int = 0
     private var lastBottomDelta: CGFloat = 0
-    
+        
     override open var state: XSRefresh.State {
         didSet {
             guard let scrollView = self.scrollView else {
@@ -56,6 +56,12 @@ open class XSRefreshBackFooter: XSRefreshFooter {
                 }
             }
         }
+    }
+    
+    open override func prepare() {
+        super.prepare()
+        
+        automaticallyChangeAlpha = true
     }
     
     override public func willMove(toSuperview newSuperview: UIView?) {
