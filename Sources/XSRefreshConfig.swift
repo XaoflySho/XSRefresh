@@ -10,7 +10,7 @@ import UIKit
 
 public class XSRefreshConfig: NSObject {
     
-    static let `default`: XSRefreshConfig = XSRefreshConfig()
+    public static let `default`: XSRefreshConfig = XSRefreshConfig()
     
     //
     public var automaticallyChangeAlpha: Bool = false
