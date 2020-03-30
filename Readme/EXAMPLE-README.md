@@ -8,15 +8,21 @@ The Class Structure Chart of XSRefresh:
 
 - `The class of red text` in the chart：You can use them directly
     - The drop-down refresh control types
-        - Normal：`XSRefreshNormalHeader`
-        - Gif：`XSRefreshGifHeader`
+        - Normal: `XSRefreshNormalHeader`
+        - Gif: `XSRefreshGifHeader`
     - The pull to refresh control types
         - Auto refresh
-            - Normal：`XSRefreshAutoNormalFooter`
-            - Gif：`XSRefreshAutoGifFooter`
+            - Normal: `XSRefreshAutoNormalFooter`
+            - Gif: `XSRefreshAutoGifFooter`
         - Auto Back
-            - Normal：`XSRefreshBackNormalFooter`
-            - Gif：`XSRefreshBackGifFooter`
+            - Normal: `XSRefreshBackNormalFooter`
+            - Gif: `XSRefreshBackGifFooter`
+    - The right pull refresh control types
+        - Normal: `XSRefreshNormalLeader`
+        - Gif: `XSRefreshGifLeader`
+    - The left pull refresh control types
+        - Normal: `XSRefreshNormalTrailer`
+        - Gif: `XSRefreshGifTrailer`
 - `The class of non-red text` in the chart：For inheritance，to use DIY the control of refresh
 - About how to DIY the control of refresh，You can refer the `XSRefreshExample`
 
@@ -91,6 +97,34 @@ class XSRefreshAutoFooter: XSRefreshFooter {
   
   /* When there is much at the bottom of the control is automatically refresh(Default is 1.0，Is at the bottom of the control appears in full, will refresh automatically) */
   var triggerAutomaticallyRefreshPercent: CGFloat = 1.0
+}
+```
+
+### XSRefreshLeader
+
+```swift
+class XSRefreshLeader: XSRefreshComponent {
+  /* Creat leader */
+  class func leader(WithRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshLeader {}
+  convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {}
+
+  /* Creat leader */
+  class func leader(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshLeader {}
+  convenience init(withRefreshing target: NSObject?, action: Selector?) {}
+}
+```
+
+### XSRefreshTrailer
+
+```swift
+class XSRefreshTrailer: XSRefreshComponent {
+  /* Creat trailer */
+  class func trailer(withRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshTrailer {}
+  convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {}
+
+  /* Creat trailer */
+  class func trailer(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshTrailer {}
+  convenience init(withRefreshing target: NSObject?, action: Selector?) {}
 }
 ```
 
