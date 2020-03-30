@@ -17,6 +17,12 @@ XSRefresh的类结构图：
         - 回弹加载：
             - 普通：`XSRefreshBackNormalFooter`
             - 动图：`XSRefreshBackGifFooter`
+    - 右拉刷新控件类：
+        - 普通：`XSRefreshNormalLeader`
+        - 动图：`XSRefreshGifLeader`
+    - 左拉加载控件类：
+        - 普通：`XSRefreshNormalTrailer`
+        - 动图：`XSRefreshGifTrailer`
 - 上图中`非红色文字的类` ：可以继承，自定义刷新控件。
 - 关于如何自定义刷新控件，可以参考`XSRefreshExample`。
 
@@ -91,6 +97,34 @@ class XSRefreshAutoFooter: XSRefreshFooter {
   
   /* 当控件底部有多少内容时自动刷新（默认为1.0，在控件底部出现完整时，自动刷新） */
   var triggerAutomaticallyRefreshPercent: CGFloat = 1.0
+}
+```
+
+### XSRefreshLeader
+
+```swift
+class XSRefreshLeader: XSRefreshComponent {
+  /* 创建 leader */
+  class func leader(WithRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshLeader {}
+  convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {}
+
+  /* 创建 leader */
+  class func leader(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshLeader {}
+  convenience init(withRefreshing target: NSObject?, action: Selector?) {}
+}
+```
+
+### XSRefreshTrailer
+
+```swift
+class XSRefreshTrailer: XSRefreshComponent {
+  /* 创建 trailer */
+  class func trailer(withRefreshing block: @escaping XSRefreshComponentAction) -> XSRefreshTrailer {}
+  convenience init(withRefreshing block: @escaping XSRefreshComponentAction) {}
+
+  /* 创建 trailer */
+  class func trailer(withRefreshing target: NSObject?, action: Selector?) -> XSRefreshTrailer {}
+  convenience init(withRefreshing target: NSObject?, action: Selector?) {}
 }
 ```
 

@@ -108,7 +108,7 @@ To see how the specification has been applied, see the [example-readmes](Readme/
 
 - [ ] ~~Support for Swift package management tools~~
 
-- [ ] Support horizontal scroll control, eg.CollectionView
+- [x] Support horizontal scroll control, eg.CollectionView
 
 - [ ] ......
 

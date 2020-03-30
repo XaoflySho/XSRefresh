@@ -1,5 +1,13 @@
 English|[简体中文](./RELEASE.zh_CN.md)
 
+## [XSRefresh 0.0.5 - Minor Release [2020.03.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.5)
+
+### Notes
+
+- Refresh control that support horizontal scroll view
+
+
+
 ## [XSRefresh 0.0.4 - Minor Release [2020.03.24]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.4)
 
 ### Notes
