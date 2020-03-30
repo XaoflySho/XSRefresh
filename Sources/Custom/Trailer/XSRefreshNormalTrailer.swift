@@ -84,4 +84,5 @@ open class XSRefreshNormalTrailer: XSRefreshTrailer {
             }
         }
     }
+    
 }

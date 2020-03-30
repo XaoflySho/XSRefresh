@@ -84,4 +84,5 @@ open class XSRefreshNormalLeader: XSRefreshLeader {
             }
         }
     }
+    
 }
