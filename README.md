@@ -8,6 +8,7 @@ An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.
 
 - [Install](#install)
   - [CocoaPods](#cocoapods)
+  - [Carthage](#carthage)
   - [Manual](#manual)
 - [Usage](#usage)
   - [Quick start](#quick-start)
