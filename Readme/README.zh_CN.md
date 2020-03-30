@@ -8,6 +8,7 @@
 
 - [安装](#安装)
   - [CocoaPods](#cocoapods)
+  - [Carthage](#carthage)
   - [手动导入](#手动导入)
 - [使用](#使用)
   - [快速开始](#快速开始)
