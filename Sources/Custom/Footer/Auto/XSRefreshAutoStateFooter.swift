@@ -16,7 +16,7 @@ open class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
         return label
     }()
     
-    open var stateTitles: [XSRefresh.State: String] = [:]
+    lazy var stateTitles: [XSRefresh.State: String] = self.config.autoFooterStateText
 
     public func setTitle(_ text: String, for state: XSRefresh.State) {
         stateTitles[state] = text
@@ -34,10 +34,6 @@ open class XSRefreshAutoStateFooter: XSRefreshAutoFooter {
     override open func prepare() {
         super.prepare()
         addSubview(stateLabel)
-        
-        setTitle(Bundle.localizedString(for: XSRefreshAutoFooterConst.idleText), for: .idle)
-        setTitle(Bundle.localizedString(for: XSRefreshAutoFooterConst.refreshingText), for: .refreshing)
-        setTitle(Bundle.localizedString(for: XSRefreshAutoFooterConst.noMoreDataText), for: .noMoreData)
         
         stateLabel.isUserInteractionEnabled = true
         stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))

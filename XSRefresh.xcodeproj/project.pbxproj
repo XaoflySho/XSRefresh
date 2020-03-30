@@ -13,6 +13,7 @@
 		179B9F382431BF2F00A284AD /* XSRefreshGifLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B9F372431BF2F00A284AD /* XSRefreshGifLeader.swift */; };
 		179B9F3A2431BF7900A284AD /* XSChiBaoZiLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B9F392431BF7900A284AD /* XSChiBaoZiLeader.swift */; };
 		179B9F3C2431C09400A284AD /* XSChiBaoZiTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B9F3B2431C09400A284AD /* XSChiBaoZiTrailer.swift */; };
+		179B9F3E2431D16800A284AD /* XSRefreshConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B9F3D2431D16800A284AD /* XSRefreshConfig.swift */; };
 		17BE52D7242B2EEE00371D8D /* XSExampleCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52D6242B2EEE00371D8D /* XSExampleCustomHeader.swift */; };
 		17BE52D9242B34F700371D8D /* XSExampleCustomAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52D8242B34F700371D8D /* XSExampleCustomAutoFooter.swift */; };
 		17BE52DB242B351A00371D8D /* XSExampleCustomBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE52DA242B351A00371D8D /* XSExampleCustomBackFooter.swift */; };
@@ -96,6 +97,7 @@
 		179B9F372431BF2F00A284AD /* XSRefreshGifLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshGifLeader.swift; sourceTree = "<group>"; };
 		179B9F392431BF7900A284AD /* XSChiBaoZiLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSChiBaoZiLeader.swift; sourceTree = "<group>"; };
 		179B9F3B2431C09400A284AD /* XSChiBaoZiTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSChiBaoZiTrailer.swift; sourceTree = "<group>"; };
+		179B9F3D2431D16800A284AD /* XSRefreshConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSRefreshConfig.swift; sourceTree = "<group>"; };
 		17BE52D6242B2EEE00371D8D /* XSExampleCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomHeader.swift; sourceTree = "<group>"; };
 		17BE52D8242B34F700371D8D /* XSExampleCustomAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomAutoFooter.swift; sourceTree = "<group>"; };
 		17BE52DA242B351A00371D8D /* XSExampleCustomBackFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSExampleCustomBackFooter.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				17E156AC2429D679007F9952 /* XSRefresh.swift */,
 				17E156AD2429D679007F9952 /* XSRefreshConst.swift */,
+				179B9F3D2431D16800A284AD /* XSRefreshConfig.swift */,
 				17E1569F2429D679007F9952 /* Base */,
 				17E156912429D679007F9952 /* Custom */,
 				17E156A72429D679007F9952 /* Extension */,
@@ -537,6 +540,7 @@
 			files = (
 				17E156BF2429D679007F9952 /* XSView.swift in Sources */,
 				17E156B72429D679007F9952 /* XSRefreshStateHeader.swift in Sources */,
+				179B9F3E2431D16800A284AD /* XSRefreshConfig.swift in Sources */,
 				179B9F382431BF2F00A284AD /* XSRefreshGifLeader.swift in Sources */,
 				17E156B52429D679007F9952 /* XSRefreshNormalHeader.swift in Sources */,
 				17E156B22429D679007F9952 /* XSRefreshAutoStateFooter.swift in Sources */,

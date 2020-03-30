@@ -23,7 +23,7 @@ open class XSRefreshStateHeader: XSRefreshHeader {
         return label
     }()
     
-    var stateTitles: [XSRefresh.State: String] = [:]
+    lazy var stateTitles: [XSRefresh.State: String] =  self.config.headerStateText
     
     public func setTitle(_ text: String, for state: XSRefresh.State) {
         stateTitles[state] = text
@@ -74,10 +74,6 @@ open class XSRefreshStateHeader: XSRefreshHeader {
         super.prepare()
         addSubview(stateLabel)
         addSubview(lastUpdatedTimeLabel)
-        
-        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.idleText), for: .idle)
-        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.pullingText), for: .pulling)
-        setTitle(Bundle.localizedString(for: XSRefreshHeaderConst.refreshingText), for: .refreshing)
     }
     
     override open func placeSubviews() {

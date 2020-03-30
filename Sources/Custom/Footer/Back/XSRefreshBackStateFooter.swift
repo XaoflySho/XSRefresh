@@ -16,7 +16,7 @@ open class XSRefreshBackStateFooter: XSRefreshBackFooter {
         return label
     }()
     
-    var stateTitles: [XSRefresh.State: String] = [:]
+    lazy var stateTitles: [XSRefresh.State: String] = self.config.backFooterStateText
 
     public func setTitle(_ text: String, for state: XSRefresh.State) {
         stateTitles[state] = text
@@ -30,11 +30,6 @@ open class XSRefreshBackStateFooter: XSRefreshBackFooter {
     override open func prepare() {
         super.prepare()
         addSubview(stateLabel)
-        
-        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.idleText), for: .idle)
-        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.pullingText), for: .pulling)
-        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.refreshingText), for: .refreshing)
-        setTitle(Bundle.localizedString(for: XSRefreshBackFooterConst.noMoreDataText), for: .noMoreData)
     }
     
     override open func placeSubviews() {

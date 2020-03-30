@@ -54,7 +54,7 @@ open class XSRefreshComponent: UIView {
     }
     
     /// 根据拖拽比例自动切换透明度
-    open var automaticallyChangeAlpha: Bool = false {
+    open var automaticallyChangeAlpha: Bool = XSRefreshConfig.default.automaticallyChangeAlpha {
         didSet {
             if self.refreshing {
                 return
@@ -74,6 +74,12 @@ open class XSRefreshComponent: UIView {
     
     /// Scroll View 手势
     private var pan: UIPanGestureRecognizer?
+    
+    private(set) var config: XSRefreshConfig = XSRefreshConfig.default
+    
+    public func registerConfig(_ config: XSRefreshConfig) {
+        self.config = config
+    }
     
     // MARK: - 初始化
     public override init(frame: CGRect) {
