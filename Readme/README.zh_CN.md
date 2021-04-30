@@ -4,7 +4,7 @@
 
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
-**[Release notes](../RELEASE/RELEASE.md)**
+**[Release notes](../RELEASE/RELEASE.zh_CN.md)**
 
 - [安装](#安装)
   - [CocoaPods](#cocoapods)
