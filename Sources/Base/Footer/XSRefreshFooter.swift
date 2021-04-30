@@ -97,4 +97,9 @@ open class XSRefreshFooter: XSRefreshComponent {
         }
     }
     
+    @discardableResult
+    open override func link(to scrollView: UIScrollView) -> Self {
+        scrollView.xs.footer = self
+        return self
+    }
 }

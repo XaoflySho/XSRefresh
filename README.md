@@ -13,6 +13,7 @@ An easy way to use pull-to-refresh, Swift version of [MJRefresh](https://github.
 - [Usage](#usage)
   - [Quick start](#quick-start)
   - [More](#more)
+  - [Swift Chaining Grammar](#Swift-Chaining-Grammar)
 - [Example Readmes](#example-readmes)
 - [TODO List](#todo-list)
 - [Maintainers](#maintainers)
@@ -99,6 +100,24 @@ func tableViewRefreshSetting() {
 }
 ```
 
+### Swift Chaining Grammar
+
+```swift
+func tableViewRefreshSetting() {
+	XSRefreshNormalHeader { [weak self] in
+		// Do something...
+	}
+	.autoChangeTransparency(true)
+	.link(to: tableView)
+  
+  XSRefreshAutoNormalFooter { [weak self] in
+		// Do something...
+	}
+	.autoChangeTransparency(true)
+	.link(to: tableView)
+}
+```
+
 ## Example Readmes
 
 To see how the specification has been applied, see the [example-readmes](Readme/EXAMPLE-README.md).
@@ -106,11 +125,9 @@ To see how the specification has been applied, see the [example-readmes](Readme/
 ## TODO List
 
 - [x] Support for Carthage management tools
-
 - [ ] ~~Support for Swift package management tools~~
-
 - [x] Support horizontal scroll control, eg.CollectionView
-
+- [x] Support Swift Chaining Grammar
 - [ ] ......
 
 ## Maintainers
