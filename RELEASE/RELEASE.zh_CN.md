@@ -1,6 +1,14 @@
 [English](./RELEASE.md)|简体中文
 
-## [XSRefresh 0.1.0 - Minor Release [2021.04.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.5)
+## [XSRefresh 0.1.1 - Minor Release [2021.04.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.1)
+
+### Notes
+
+- 修复了一个问题。
+
+
+
+## [XSRefresh 0.1.0 - Minor Release [2021.04.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.0)
 
 ### Notes
 
