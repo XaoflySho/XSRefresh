@@ -16,20 +16,26 @@ class XSWKWebViewViewController: UIViewController {
     
     let request = URLRequest(url: URL(string: "https://github.com/XaoflySho/XSRefresh")!)
     
+    @objc func example41() {
+        XSRefreshNormalHeader { [weak self] in
+            self?.webView.reload()
+        }
+        .autoChangeTransparency(true)
+        .afterBeginningAction {
+            
+        }
+        .link(to: webView.scrollView)
+        
+        webView.scrollView.xs.header?.beginRefreshing()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         webView.navigationDelegate = self
         
-        let header = XSRefreshNormalHeader {
-            self.webView.load(self.request)
-        }
-        header.stateLabel.isHidden = true
-        header.lastUpdatedTimeLabel.isHidden = true
-        
-        self.webView.scrollView.xs.header = header
-        
-        header.beginRefreshing()
+        webView.load(request)
+        example41()
     }
 
     deinit {
