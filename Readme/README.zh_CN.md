@@ -4,7 +4,7 @@
 
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
-**[Release notes](../RELEASE/RELEASE.md)**
+**[Release notes](../RELEASE/RELEASE.zh_CN.md)**
 
 - [安装](#安装)
   - [CocoaPods](#cocoapods)
@@ -13,6 +13,7 @@
 - [使用](#使用)
   - [快速开始](#快速开始)
   - [更多](#更多)
+  - [Swift链式语法](#Swift-链式语法)
 - [示例说明](#示例说明)
 - [待办事项](#待办事项)
 - [维护](#维护)
@@ -99,6 +100,24 @@ func tableViewRefreshSetting() {
 }
 ```
 
+### Swift 链式语法
+
+```swift
+func tableViewRefreshSetting() {
+	XSRefreshNormalHeader { [weak self] in
+		// Do something...
+	}
+	.autoChangeTransparency(true)
+	.link(to: tableView)
+  
+  XSRefreshAutoNormalFooter { [weak self] in
+		// Do something...
+	}
+	.autoChangeTransparency(true)
+	.link(to: tableView)
+}
+```
+
 ## 示例说明
 
 要了解如何应用该规范，请参见[example-readmes](EXAMPLE-README.zh_CN.md)。
@@ -106,11 +125,9 @@ func tableViewRefreshSetting() {
 ## 待办事项
 
 - [x] 支持 Carthage 管理工具
-
 - [ ] ~~支持 Swift Package Manager 管理工具~~
-
 - [x] 支持横向滚动的控件，例如Collection View
-
+- [x] 支持Swift链式语法
 - [ ] ......
 
 ## 维护

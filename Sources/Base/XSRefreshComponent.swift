@@ -222,4 +222,38 @@ open class XSRefreshComponent: UIView {
             }
         }
     }
+    
+    /// 自动变化透明度
+    @discardableResult
+    open func autoChangeTransparency(_ isAutoChange: Bool) -> Self {
+        self.automaticallyChangeAlpha = isAutoChange
+        return self
+    }
+    
+    /// 刷新开始后立即调用的回调
+    @discardableResult
+    open func afterBeginningAction(_ action: XSRefreshComponentAction?) -> Self {
+        self.beginRefreshingCompletionBlock = action
+        return self
+    }
+    
+    /// 刷新动画开始后立即调用的回调
+    @discardableResult
+    open func endingAnimationBeginningAction(_ action: XSRefreshComponentAction?) -> Self {
+        self.endRefreshingAnimationBeginAction = action
+        return self
+    }
+    
+    /// 刷新结束后立即调用的回调
+    @discardableResult
+    open func afterEndingAction(_ action: XSRefreshComponentAction?) -> Self {
+        self.endRefreshingCompletionBlock = action
+        return self
+    }
+    
+    /// 设置到ScrollView
+    @discardableResult
+    open func link(to scrollView: UIScrollView) -> Self {
+        return self
+    }
 }

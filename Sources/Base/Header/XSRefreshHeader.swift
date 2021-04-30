@@ -196,4 +196,10 @@ open class XSRefreshHeader: XSRefreshComponent {
             self.pullingPercent = pullingPercent
         }
     }
+    
+    @discardableResult
+    open override func link(to scrollView: UIScrollView) -> Self {
+        scrollView.xs.header = self
+        return self
+    }
 }
