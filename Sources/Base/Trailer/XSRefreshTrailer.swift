@@ -194,4 +194,10 @@ open class XSRefreshTrailer: XSRefreshComponent {
         let width = scrollView.xs.width - scrollViewOriginalInset.left - scrollViewOriginalInset.right
         return scrollView.contentSize.width - width
     }
+    
+    @discardableResult
+    open override func link(to scrollView: UIScrollView) -> Self {
+        scrollView.xs.trailer = self
+        return self
+    }
 }
