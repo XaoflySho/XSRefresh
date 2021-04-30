@@ -1,5 +1,13 @@
 English|[简体中文](./RELEASE.zh_CN.md)
 
+## [XSRefresh 0.1.0 - Minor Release [2021.04.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.5)
+
+### Notes
+
+- Support Swift Chaining Grammar
+
+
+
 ## [XSRefresh 0.0.5 - Minor Release [2020.03.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.0.5)
 
 ### Notes
