@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -22,9 +22,10 @@ let package = Package(
         .target(
             name: "XSRefresh",
             dependencies: [],
-            path: "Sources"),
-        .testTarget(
-            name: "XSRefreshTests",
-            dependencies: ["XSRefresh"]),
+            path: "Sources",
+            resources: [
+                .process("XSRefresh.bundle")
+            ]
+        ),
     ]
 )
