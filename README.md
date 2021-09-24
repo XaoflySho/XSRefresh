@@ -125,7 +125,7 @@ To see how the specification has been applied, see the [example-readmes](Readme/
 ## TODO List
 
 - [x] Support for Carthage management tools
-- [ ] ~~Support for Swift package management tools~~
+- [ ] Support for Swift package management tools
 - [x] Support horizontal scroll control, eg.CollectionView
 - [x] Support Swift Chaining Grammar
 - [ ] ......
