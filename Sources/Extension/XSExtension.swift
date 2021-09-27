@@ -23,7 +23,12 @@ extension UILabel {
 extension Bundle {
     
     static var refreshBundle: Bundle {
-        let bundle = Bundle(path: Bundle(for: XSRefresh.self).path(forResource: "XSRefresh", ofType: "bundle")!)!
+#if SWIFT_PACKAGE
+        let containnerBundle = SWIFTPM_MODULE_BUNDLE
+#else
+        let containnerBundle = Bundle(for: XSRefresh.self)
+#endif
+        let bundle = Bundle(path: containnerBundle.path(forResource: "XSRefresh", ofType: "bundle")!)!
         return bundle
     }
     
