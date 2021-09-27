@@ -25,9 +25,6 @@ let package = Package(
             path: "Sources",
             resources: [
                 .process("XSRefresh.bundle")
-            ],
-            cSettings: [
-                .define("SWIFT_PACKAGE")
             ]
         ),
     ]
