@@ -1,5 +1,5 @@
 language: swift
-xcode_project: XSRefreshExample.xcodeproj
+xcode_project: XSRefresh.xcodeproj
 xcode_scheme: XSRefresh
 
 env:
