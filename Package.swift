@@ -24,6 +24,9 @@ let package = Package(
             name: "XSRefresh",
             dependencies: [],
             path: "Sources",
+            exclude: [
+                "Info.plist"
+            ],
             resources: [
                 .process("XSRefresh.bundle")
             ],
