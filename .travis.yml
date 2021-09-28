@@ -3,10 +3,10 @@ osx_image: xcode12.5
 language: swift
 xcode_project: XSRefresh.xcodeproj
 xcode_scheme: XSRefresh
-xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone X
+xcode_destination: platform=iOS Simulator,OS=14.1,name=iPhone 12
   
 script:
-  - xcodebuild build -project 'XSRefresh.xcodeproj' -scheme 'XSRefresh' -destination 'platform=iOS Simulator,OS=13.0,name=iPhone X' | xcpretty
+  - xcodebuild build -project 'XSRefresh.xcodeproj' -scheme 'XSRefresh' -destination 'platform=iOS Simulator,OS=14.1,name=iPhone 12' | xcpretty
   - pod lib lint
   - carthage build --no-skip-current --use-xcframeworks
 
