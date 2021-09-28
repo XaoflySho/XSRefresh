@@ -125,7 +125,7 @@ func tableViewRefreshSetting() {
 ## 待办事项
 
 - [x] 支持 Carthage 管理工具
-- [ ] ~~支持 Swift Package Manager 管理工具~~
+- [x] 支持 Swift Package Manager 管理工具
 - [x] 支持横向滚动的控件，例如Collection View
 - [x] 支持Swift链式语法
 - [ ] ......
