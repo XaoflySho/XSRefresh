@@ -1,5 +1,14 @@
 English|[简体中文](./RELEASE.zh_CN.md)
 
+## [XSRefresh 0.1.2 - Minor Release [2021.09.27]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.2)
+
+### Notes
+
+- Support Swift Package Manager.
+
+
+
+
 ## [XSRefresh 0.1.1 - Minor Release [2021.04.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.1)
 
 ### Notes
@@ -12,7 +21,7 @@ English|[简体中文](./RELEASE.zh_CN.md)
 
 ### Notes
 
-- Support Swift Chaining Grammar
+- Support Swift Chaining Grammar.
 
 
 
@@ -20,7 +29,7 @@ English|[简体中文](./RELEASE.zh_CN.md)
 
 ### Notes
 
-- Refresh control that support horizontal scroll view
+- Refresh control that support horizontal scroll view.
 
 
 
