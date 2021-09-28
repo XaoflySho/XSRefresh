@@ -1,5 +1,14 @@
 [English](./RELEASE.md)|简体中文
 
+## [XSRefresh 0.1.2 - Minor Release [2021.09.28]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.2)
+
+### Notes
+
+- 支持 Swift Package Manager。
+
+
+
+
 ## [XSRefresh 0.1.1 - Minor Release [2021.04.30]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.1)
 
 ### Notes
@@ -12,7 +21,7 @@
 
 ### Notes
 
-- 支持 Swift 链式语法
+- 支持 Swift 链式语法。
 
 
 
@@ -20,7 +29,7 @@
 
 ### Notes
 
-- 支持横向滑动的加载控件
+- 支持横向滑动的加载控件。
 
 
 
