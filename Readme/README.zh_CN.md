@@ -1,6 +1,8 @@
 [English](../README.md)|简体中文
 
-# XSRefresh [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](./LICENSE) [![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg?style=flat)](https://cocoapods.org/pods/XSRefresh) [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D?style=flat)](https://github.com/Carthage/Carthage)
+# XSRefresh
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](./LICENSE) ![Build](https://app.travis-ci.com/XaoflySho/XSRefresh.svg?branch=master) [![podversion](https://img.shields.io/cocoapods/v/XSRefresh.svg?style=flat)](https://cocoapods.org/pods/XSRefresh) [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D?style=flat)](https://github.com/Carthage/Carthage) ![SPM](https://img.shields.io/badge/SPM-Support-4BC51D?style=flat)
 
 一个简捷的拉动刷新控件，[MJRefresh](https://github.com/CoderMJLee/MJRefresh)的Swift版本。
 
@@ -125,7 +127,7 @@ func tableViewRefreshSetting() {
 ## 待办事项
 
 - [x] 支持 Carthage 管理工具
-- [ ] ~~支持 Swift Package Manager 管理工具~~
+- [x] 支持 Swift Package Manager 管理工具
 - [x] 支持横向滚动的控件，例如Collection View
 - [x] 支持Swift链式语法
 - [ ] ......
