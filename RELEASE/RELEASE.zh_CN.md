@@ -1,6 +1,6 @@
 [English](./RELEASE.md)|简体中文
 
-## [XSRefresh 0.1.2 - Minor Release [2021.09.27]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.2)
+## [XSRefresh 0.1.2 - Minor Release [2021.09.28]](https://github.com/XaoflySho/XSRefresh/releases/tag/0.1.2)
 
 ### Notes
 
