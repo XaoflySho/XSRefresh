@@ -1,0 +1,17 @@
+language: swift
+xcode_project: XSRefreshExample.xcodeproj
+xcode_scheme: XSRefresh
+
+env:
+  global:
+    - FRAMEWORK_NAME=XSRefresh
+before_install:
+  - gem install xcpretty
+  
+script:
+  - xcodebuild -project $xcode_project -scheme $FRAMEWORK_NAME build | xcpretty
+  - pod lib lint
+  - carthage build --no-skip-current
+
+notifications:
+  email: false
