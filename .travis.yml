@@ -1,17 +1,14 @@
+os: osx
+osx_image: xcode12.5
 language: swift
 xcode_project: XSRefresh.xcodeproj
 xcode_scheme: XSRefresh
-
-env:
-  global:
-    - FRAMEWORK_NAME=XSRefresh
-before_install:
-  - gem install xcpretty
+xcode_destination: platform=iOS Simulator,OS=13.0,name=iPhone X
   
 script:
-  - xcodebuild -project $xcode_project -scheme $FRAMEWORK_NAME build | xcpretty
+  - xcodebuild build -project 'XSRefresh.xcodeproj' -scheme 'XSRefresh' -destination 'platform=iOS Simulator,OS=13.0,name=iPhone X' | xcpretty
   - pod lib lint
-  - carthage build --no-skip-current
+  - carthage build --no-skip-current --use-xcframeworks
 
 notifications:
   email: false
